@@ -16,9 +16,9 @@
         "baseUrl": ".",
         "paths": {
             "@checkout/*": ["apps/checkout/*"],
-            "@store/*": ["apps/store/*"],
             "@nextjs-nx-module-federation/design-system": ["libs/design-system/src/index.ts"],
-            "@nextjs-nx-module-federation/design-system/*": ["libs/design-system/src/*"]
+            "@nextjs-nx-module-federation/design-system/*": ["libs/design-system/src/*"],
+            "@store/*": ["apps/store/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

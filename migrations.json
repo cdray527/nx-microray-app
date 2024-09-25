@@ -123,9 +123,9 @@
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/workspace with @nx/workspace",
+            "description": "Replace @nx/workspace with @nx/workspace",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/workspace",
+            "package": "@nx/workspace",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
@@ -133,7 +133,7 @@
             "description": "Generates a plugin called 'workspace-plugin' containing your workspace generators.",
             "cli": "nx",
             "implementation": "./src/migrations/update-16-0-0/move-workspace-generators-to-local-plugin",
-            "package": "@nrwl/workspace",
+            "package": "@nx/workspace",
             "name": "16-0-0-move-workspace-generators-into-local-plugin"
         },
         {
@@ -141,15 +141,15 @@
             "description": "Fix .babelrc presets if it contains an invalid entry for @nx/web/babel.",
             "cli": "nx",
             "implementation": "./src/migrations/update-16-0-0/fix-invalid-babelrc",
-            "package": "@nrwl/workspace",
+            "package": "@nx/workspace",
             "name": "16-0-0-fix-invalid-babelrc"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/cypress with @nx/cypress",
+            "description": "Replace @nx/cypress with @nx/cypress",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/cypress",
+            "package": "@nx/cypress",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
@@ -157,7 +157,7 @@
             "version": "16.2.0-beta.0",
             "description": "Normalize tsconfig.cy.json files to be located at '<projectRoot>/cypress/tsconfig.json'",
             "implementation": "./src/migrations/update-16-2-0/update-cy-tsconfig",
-            "package": "@nrwl/cypress",
+            "package": "@nx/cypress",
             "name": "update-16-2-0-normalize-tsconfigs"
         },
         {
@@ -165,7 +165,7 @@
             "version": "16.4.0-beta.10",
             "description": "Remove tsconfig.e2e.json and add settings to project tsconfig.json. tsConfigs executor option is now deprecated. The project level tsconfig.json file should be used instead.",
             "implementation": "./src/migrations/update-16-4-0/tsconfig-sourcemaps",
-            "package": "@nrwl/cypress",
+            "package": "@nx/cypress",
             "name": "update-16-3-0-remove-old-tsconfigs"
         },
         {
@@ -173,7 +173,7 @@
             "version": "16.8.0-beta.4",
             "description": "Update to Cypress v13. Most noteable change is video recording is off by default. This migration will only update if the workspace is already on Cypress v12. https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-130",
             "implementation": "./src/migrations/update-16-8-0/cypress-13",
-            "package": "@nrwl/cypress",
+            "package": "@nx/cypress",
             "name": "update-16-8-0-cypress-13"
         },
         {
@@ -181,7 +181,7 @@
             "version": "18.1.0-beta.3",
             "description": "Update to Cypress ^13.6.6 if the workspace is using Cypress v13 to ensure workspaces don't use v13.6.5 which has an issue when verifying Cypress.",
             "implementation": "./src/migrations/update-18-1-0/update-cypress-version-13-6-6",
-            "package": "@nrwl/cypress",
+            "package": "@nx/cypress",
             "name": "update-cypress-version-13-6-6"
         },
         {
@@ -189,58 +189,58 @@
             "version": "19.6.0-beta.4",
             "description": "Update ciWebServerCommand to use static serve for the application.",
             "implementation": "./src/migrations/update-19-6-0/update-ci-webserver-for-static-serve",
-            "package": "@nrwl/cypress",
+            "package": "@nx/cypress",
             "name": "update-19-6-0-update-ci-webserver-for-vite"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/linter with @nx/linter",
+            "description": "Replace @nx/eslint with @nx/eslint",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/linter",
+            "package": "@nx/eslint",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
             "version": "16.8.0",
             "description": "update-16-8-0-add-ignored-files",
             "implementation": "./src/migrations/update-16-8-0-add-ignored-files/update-16-8-0-add-ignored-files",
-            "package": "@nrwl/linter",
+            "package": "@nx/eslint",
             "name": "update-16-8-0-add-ignored-files"
         },
         {
             "version": "17.0.0-beta.7",
             "description": "update-17-0-0-rename-to-eslint",
             "implementation": "./src/migrations/update-17-0-0-rename-to-eslint/update-17-0-0-rename-to-eslint",
-            "package": "@nrwl/linter",
+            "package": "@nx/eslint",
             "name": "update-17-0-0-rename-to-eslint"
         },
         {
             "version": "17.1.0-beta.1",
             "description": "Updates for @typescript-utils/utils v6.9.1+",
             "implementation": "./src/migrations/update-17-1-0/update-typescript-eslint",
-            "package": "@nrwl/linter",
+            "package": "@nx/eslint",
             "name": "update-typescript-eslint"
         },
         {
             "version": "17.2.0-beta.0",
             "description": "Simplify eslintFilePatterns",
             "implementation": "./src/migrations/update-17-2-0/simplify-eslint-patterns",
-            "package": "@nrwl/linter",
+            "package": "@nx/eslint",
             "name": "simplify-eslint-patterns"
         },
         {
             "version": "17.2.9",
             "description": "Move executor options to target defaults",
             "implementation": "./src/migrations/update-17-2-9/move-options-to-target-defaults",
-            "package": "@nrwl/linter",
+            "package": "@nx/eslint",
             "name": "move-options-to-target-defaults"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/eslint-plugin-nx with @nx/eslint-plugin",
+            "description": "Replace @nx/eslint-plugin with @nx/eslint-plugin",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/eslint-plugin-nx",
+            "package": "@nx/eslint-plugin",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
@@ -248,7 +248,7 @@
             "version": "17.2.6-beta.1",
             "description": "Rename workspace rules from @nx/workspace/name to @nx/workspace-name",
             "implementation": "./src/migrations/update-17-2-6-rename-workspace-rules/rename-workspace-rules",
-            "package": "@nrwl/eslint-plugin-nx",
+            "package": "@nx/eslint-plugin",
             "name": "update-17-2-6-rename-workspace-rules"
         },
         {
@@ -256,31 +256,31 @@
             "version": "19.1.0-beta.6",
             "description": "Migrate no-extra-semi rules into user config, out of nx extendable configs",
             "implementation": "./src/migrations/update-19-1-0-migrate-no-extra-semi/migrate-no-extra-semi",
-            "package": "@nrwl/eslint-plugin-nx",
+            "package": "@nx/eslint-plugin",
             "name": "update-19-1-0-rename-no-extra-semi"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/web with @nx/web",
+            "description": "Replace @nx/web with @nx/web",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/web",
+            "package": "@nx/web",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.4",
-            "description": "Replace @nrwl/web executors with @nx/webpack and @nx/rollup",
+            "description": "Replace @nx/web executors with @nx/webpack and @nx/rollup",
             "implementation": "./src/migrations/update-16-0-0-update-executors/update-16-0-0-update-executors",
-            "package": "@nrwl/web",
+            "package": "@nx/web",
             "name": "update-16-0-0-update-executors"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/jest with @nx/jest",
+            "description": "Replace @nx/jest with @nx/jest",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/jest",
+            "package": "@nx/jest",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
@@ -288,22 +288,22 @@
             "version": "16.5.0-beta.2",
             "description": "Add test-setup.ts to ignored files in production input",
             "implementation": "./src/migrations/update-16-5-0/add-test-setup-to-inputs-ignore",
-            "package": "@nrwl/jest",
+            "package": "@nx/jest",
             "name": "add-test-setup-to-inputs-ignore"
         },
         {
             "version": "17.1.0-beta.2",
             "description": "Move jest executor options to nx.json targetDefaults",
             "implementation": "./src/migrations/update-17-1-0/move-options-to-target-defaults",
-            "package": "@nrwl/jest",
+            "package": "@nx/jest",
             "name": "move-options-to-target-defaults"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/react with @nx/react",
+            "description": "Replace @nx/react with @nx/react",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
@@ -311,7 +311,7 @@
             "version": "16.2.0-beta.0",
             "description": "Remove react-test-renderer from package.json",
             "implementation": "./src/migrations/update-16-2-0-remove-package/update-16-2-0-remove-package",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "update-16-2-0-remove-package"
         },
         {
@@ -319,7 +319,7 @@
             "version": "16.3.0-beta.2",
             "description": "Remove @types/react-router-dom from package.json",
             "implementation": "./src/migrations/update-16-3-0/remove-types-react-router-dom-package",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "remove-types-react-router-dom"
         },
         {
@@ -327,7 +327,7 @@
             "version": "16.7.0-beta.2",
             "description": "Add @babel/core to package.json if @babel/preset-react is present",
             "implementation": "./src/migrations/update-16-7-0/add-babel-core",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "add-babel-core"
         },
         {
@@ -335,7 +335,7 @@
             "version": "16.7.0-beta.2",
             "description": "Add @nx/react types to tsconfig types array",
             "implementation": "./src/migrations/update-16-7-0-add-typings/update-16-7-0-add-typings",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "update-16-7-0-add-typings"
         },
         {
@@ -343,7 +343,7 @@
             "version": "18.0.0-beta.0",
             "description": "Add NX_MF_DEV_SERVER_STATIC_REMOTES to inputs for task hashing when '@nx/webpack:webpack' is used for Module Federation.",
             "factory": "./src/migrations/update-18-0-0/add-mf-env-var-to-target-defaults",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "add-module-federation-env-var-to-target-defaults"
         },
         {
@@ -351,7 +351,7 @@
             "version": "18.1.1-beta.0",
             "description": "Ensure targetDefaults inputs for task hashing when '@nx/webpack:webpack' is used are correct for Module Federation.",
             "factory": "./src/migrations/update-18-1-1/fix-target-defaults-inputs",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "fix-target-defaults-for-webpack"
         },
         {
@@ -359,7 +359,7 @@
             "version": "19.6.0-beta.4",
             "description": "Ensure Module Federation DTS is turned off by default.",
             "factory": "./src/migrations/update-19-6-0/turn-off-dts-by-default",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "update-19-6-0-turn-module-federation-dts-off"
         },
         {
@@ -367,7 +367,7 @@
             "version": "19.6.0-beta.4",
             "description": "Update the server file for Module Federation SSR port value to be the same as the 'serve' target port value.",
             "factory": "./src/migrations/update-19-6-0/update-ssr-server-port",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "update-module-federation-ssr-server-file"
         },
         {
@@ -375,15 +375,15 @@
             "version": "19.6.1-beta.0",
             "description": "Ensure Target Defaults are set correctly for Module Federation.",
             "factory": "./src/migrations/update-19-6-1/ensure-depends-on-for-mf",
-            "package": "@nrwl/react",
+            "package": "@nx/react",
             "name": "update-19-6-1-ensure-module-federation-target-defaults"
         },
         {
             "cli": "nx",
             "version": "16.0.0-beta.1",
-            "description": "Replace @nrwl/next with @nx/next",
+            "description": "Replace @nx/next with @nx/next",
             "implementation": "./src/migrations/update-16-0-0-add-nx-packages/update-16-0-0-add-nx-packages",
-            "package": "@nrwl/next",
+            "package": "@nx/next",
             "name": "update-16-0-0-add-nx-packages"
         },
         {
@@ -391,7 +391,7 @@
             "version": "16.3.0-beta.9",
             "description": "Remove root build option from project configurations since it is not needed.",
             "implementation": "./src/migrations/update-16-3-0/remove-root-build-option",
-            "package": "@nrwl/next",
+            "package": "@nx/next",
             "name": "update-16-3-0-remove-root-build-option"
         },
         {
@@ -399,7 +399,7 @@
             "version": "16.4.0-beta.3",
             "description": "Update package.json moving @nx/next from dependency to devDependency",
             "implementation": "./src/migrations/update-16-4-0/update-nx-next-dependency",
-            "package": "@nrwl/next",
+            "package": "@nx/next",
             "name": "update-16-4-0-update-next-dependency"
         },
         {
@@ -407,7 +407,7 @@
             "version": "17.2.7",
             "description": "Remove patched eslint rule for @next/next/no-html-link-for-pages",
             "implementation": "./src/migrations/update-17-2-7/remove-eslint-rules-patch",
-            "package": "@nrwl/next",
+            "package": "@nx/next",
             "name": "update-17-2-7"
         }
     ]

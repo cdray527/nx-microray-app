@@ -8,8 +8,8 @@ This is an example project to demonstrate how to use Nx, Next.js and Module Fede
 
 Also this project was created as a proof of concept to write one article, you can read it here:
 
-- 🇬🇧 [English](https://brunos3d.notion.site/Nx-Next-js-and-Module-Federation-EN-US-9c945124ddc246a8b8ca0b5a4a4343a7)
-- 🇧🇷 [Portuguese (pt-br)](https://brunos3d.notion.site/Nx-Next-js-e-Module-Federation-PT-BR-7602efbb3b3c41468e961fac5a5b9605)
+-   🇬🇧 [English](https://brunos3d.notion.site/Nx-Next-js-and-Module-Federation-EN-US-9c945124ddc246a8b8ca0b5a4a4343a7)
+-   🇧🇷 [Portuguese (pt-br)](https://brunos3d.notion.site/Nx-Next-js-e-Module-Federation-PT-BR-7602efbb3b3c41468e961fac5a5b9605)
 
 ## Techs & Tools
 
@@ -17,30 +17,30 @@ This project came with some powerful tools
 
 ### Core
 
-- [Nx](https://nx.dev/)
-- [Next.js](https://nextjs.org/)
-- [Webpack](https://webpack.js.org/)
+-   [Nx](https://nx.dev/)
+-   [Next.js](https://nextjs.org/)
+-   [Webpack](https://webpack.js.org/)
 
 ### Plugins
 
-- [Nx + Next.js plugin](https://nx.dev/packages/next)
-- [@module-federation/nextjs-mf](https://app.privjs.com/package?pkg=@module-federation/nextjs-mf)
+-   [Nx + Next.js plugin](https://nx.dev/packages/next)
+-   [@module-federation/nextjs-mf](https://app.privjs.com/package?pkg=@module-federation/nextjs-mf)
 
 ### Linting & Tests
 
-- [Jest](https://jestjs.io/)
-- [Cypress](https://www.cypress.io/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+-   [Jest](https://jestjs.io/)
+-   [Cypress](https://www.cypress.io/)
+-   [ESLint](https://eslint.org/)
+-   [Prettier](https://prettier.io/)
 
 ### 3rd party components
 
-- [reactstrap](https://reactstrap.github.io/)
+-   [reactstrap](https://reactstrap.github.io/)
 
 ## Remotes
 
-- Checkout ([preview](https://nextjs-nx-module-federation-checkout.vercel.app))
-- Store ([preview](https://nextjs-nx-module-federation-store.vercel.app))
+-   Checkout ([preview](https://nextjs-nx-module-federation-checkout.vercel.app))
+-   Store ([preview](https://nextjs-nx-module-federation-store.vercel.app))
 
 ## Running in the development environment
 
@@ -63,7 +63,7 @@ npx nx run-many --target=serve --all
 You can creating new applications on this workspace using some [Nx Generators](https://nx.dev/generators/using-generators) from this [Nx + Next.js plugin](https://nx.dev/packages/next) like the command bellow:
 
 ```bash
-npx nx g @nrwl/next:app app-name
+npx nx g @nx/next:app app-name
 ```
 
 ## Creating new pages
@@ -71,7 +71,7 @@ npx nx g @nrwl/next:app app-name
 To generate new pages you can just use:
 
 ```bash
-npx nx g @nrwl/next:page new-page --project=app-name
+npx nx g @nx/next:page new-page --project=app-name
 ```
 
 ## Creating new components
@@ -79,15 +79,15 @@ npx nx g @nrwl/next:page new-page --project=app-name
 To generate new components you can just use:
 
 ```bash
-npx nx g @nrwl/next:component new-component --project=app-name
+npx nx g @nx/next:component new-component --project=app-name
 ```
 
 ## Creating libraries
 
-You can also use @nrwl/next plugin to generate libs, shared ui elements, design-system, etc... just running:
+You can also use @nx/next plugin to generate libs, shared ui elements, design-system, etc... just running:
 
 ```bash
-npx nx g @nrwl/next:lib new-lib-name
+npx nx g @nx/next:lib new-lib-name
 ```
 
 ## Sharing

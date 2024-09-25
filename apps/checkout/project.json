@@ -1,14 +1,15 @@
 {
+    "name": "checkout",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "apps/checkout",
     "projectType": "application",
+    "tags": [],
     "targets": {
         "build": {
-            "executor": "@nrwl/next:build",
+            "executor": "@nx/next:build",
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
-                "root": "apps/checkout",
                 "outputPath": "dist/apps/checkout"
             },
             "configurations": {
@@ -17,7 +18,7 @@
             }
         },
         "serve": {
-            "executor": "@nrwl/next:server",
+            "executor": "@nx/next:server",
             "defaultConfiguration": "development",
             "options": {
                 "buildTarget": "checkout:build",
@@ -36,26 +37,20 @@
             }
         },
         "export": {
-            "executor": "@nrwl/next:export",
+            "executor": "@nx/next:export",
             "options": {
                 "buildTarget": "checkout:build:production"
             }
         },
         "test": {
-            "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/apps/checkout"],
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/apps/checkout"],
             "options": {
-                "jestConfig": "apps/checkout/jest.config.ts",
-                "passWithNoTests": true
+                "jestConfig": "apps/checkout/jest.config.ts"
             }
         },
         "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["apps/checkout/**/*.{ts,tsx,js,jsx}"]
-            }
+            "executor": "@nx/eslint:lint"
         }
-    },
-    "tags": []
+    }
 }

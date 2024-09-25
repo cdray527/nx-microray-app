@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/module-federation/component": "pages/module-federation/component.js",
+  "/": "pages/index.js",
+  "/module-federation/custom-hook": "pages/module-federation/custom-hook.js",
+  "/design-system/card-product": "pages/design-system/card-product.js",
+  "/design-system/buttons": "pages/design-system/buttons.js"
+}

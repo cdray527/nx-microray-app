@@ -1,0 +1,443 @@
+{
+  "id": "store",
+  "name": "store",
+  "metaData": {
+    "name": "store",
+    "type": "app",
+    "buildInfo": {
+      "buildVersion": "local"
+    },
+    "remoteEntry": {
+      "name": "remoteEntry.js",
+      "path": "",
+      "type": "commonjs-module"
+    },
+    "types": {
+      "path": "",
+      "name": "",
+      "zip": "",
+      "api": ""
+    },
+    "globalName": "store",
+    "pluginVersion": "0.6.6",
+    "publicPath": "/_next/",
+    "prefetchInterface": false
+  },
+  "shared": [
+    {
+      "id": "store:next/dynamic",
+      "name": "next/dynamic",
+      "version": "14.2.3",
+      "singleton": true,
+      "requiredVersion": "^14.2.3",
+      "assets": {
+        "js": {
+          "async": [
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ],
+          "sync": [
+            "vendor-chunks/next.js",
+            "webpack-runtime.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/@module-federation.js",
+            "vendor-chunks/bootstrap.js",
+            "pages/_error.js",
+            "pages/_document.js",
+            "pages/module-federation/component.js",
+            "pages/index.js",
+            "pages/module-federation/custom-hook.js",
+            "vendor-chunks/reactstrap.js",
+            "vendor-chunks/@popperjs.js",
+            "vendor-chunks/react-transition-group.js",
+            "vendor-chunks/prop-types.js",
+            "vendor-chunks/react-popper.js",
+            "vendor-chunks/react-fast-compare.js",
+            "vendor-chunks/object-assign.js",
+            "vendor-chunks/dom-helpers.js",
+            "vendor-chunks/warning.js",
+            "vendor-chunks/classnames.js",
+            "vendor-chunks/@babel.js",
+            "pages/design-system/card-product.js",
+            "pages/design-system/buttons.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:next/head",
+      "name": "next/head",
+      "version": "14.2.3",
+      "singleton": true,
+      "requiredVersion": "^14.2.3",
+      "assets": {
+        "js": {
+          "async": [
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ],
+          "sync": [
+            "vendor-chunks/next.js",
+            "webpack-runtime.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/@module-federation.js",
+            "vendor-chunks/bootstrap.js",
+            "pages/_error.js",
+            "pages/_document.js",
+            "pages/module-federation/component.js",
+            "pages/index.js",
+            "pages/module-federation/custom-hook.js",
+            "vendor-chunks/reactstrap.js",
+            "vendor-chunks/@popperjs.js",
+            "vendor-chunks/react-transition-group.js",
+            "vendor-chunks/prop-types.js",
+            "vendor-chunks/react-popper.js",
+            "vendor-chunks/react-fast-compare.js",
+            "vendor-chunks/object-assign.js",
+            "vendor-chunks/dom-helpers.js",
+            "vendor-chunks/warning.js",
+            "vendor-chunks/classnames.js",
+            "vendor-chunks/@babel.js",
+            "pages/design-system/card-product.js",
+            "pages/design-system/buttons.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:next/image",
+      "name": "next/image",
+      "version": "14.2.3",
+      "singleton": true,
+      "requiredVersion": "^14.2.3",
+      "assets": {
+        "js": {
+          "async": [
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ],
+          "sync": [
+            "vendor-chunks/next.js",
+            "webpack-runtime.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/@module-federation.js",
+            "vendor-chunks/bootstrap.js",
+            "pages/_error.js",
+            "pages/_document.js",
+            "pages/module-federation/component.js",
+            "pages/index.js",
+            "pages/module-federation/custom-hook.js",
+            "vendor-chunks/reactstrap.js",
+            "vendor-chunks/@popperjs.js",
+            "vendor-chunks/react-transition-group.js",
+            "vendor-chunks/prop-types.js",
+            "vendor-chunks/react-popper.js",
+            "vendor-chunks/react-fast-compare.js",
+            "vendor-chunks/object-assign.js",
+            "vendor-chunks/dom-helpers.js",
+            "vendor-chunks/warning.js",
+            "vendor-chunks/classnames.js",
+            "vendor-chunks/@babel.js",
+            "pages/design-system/card-product.js",
+            "pages/design-system/buttons.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:next/link",
+      "name": "next/link",
+      "version": "14.2.3",
+      "singleton": true,
+      "requiredVersion": "^14.2.3",
+      "assets": {
+        "js": {
+          "async": [
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ],
+          "sync": [
+            "vendor-chunks/next.js",
+            "webpack-runtime.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/@module-federation.js",
+            "vendor-chunks/bootstrap.js",
+            "pages/_error.js",
+            "pages/_document.js",
+            "pages/module-federation/component.js",
+            "pages/index.js",
+            "pages/module-federation/custom-hook.js",
+            "vendor-chunks/reactstrap.js",
+            "vendor-chunks/@popperjs.js",
+            "vendor-chunks/react-transition-group.js",
+            "vendor-chunks/prop-types.js",
+            "vendor-chunks/react-popper.js",
+            "vendor-chunks/react-fast-compare.js",
+            "vendor-chunks/object-assign.js",
+            "vendor-chunks/dom-helpers.js",
+            "vendor-chunks/warning.js",
+            "vendor-chunks/classnames.js",
+            "vendor-chunks/@babel.js",
+            "pages/design-system/card-product.js",
+            "pages/design-system/buttons.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:next/router",
+      "name": "next/router",
+      "version": "14.2.3",
+      "singleton": true,
+      "requiredVersion": "^14.2.3",
+      "assets": {
+        "js": {
+          "async": [
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ],
+          "sync": [
+            "vendor-chunks/next.js",
+            "webpack-runtime.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/@module-federation.js",
+            "vendor-chunks/bootstrap.js",
+            "pages/_error.js",
+            "pages/_document.js",
+            "pages/module-federation/component.js",
+            "pages/index.js",
+            "pages/module-federation/custom-hook.js",
+            "vendor-chunks/reactstrap.js",
+            "vendor-chunks/@popperjs.js",
+            "vendor-chunks/react-transition-group.js",
+            "vendor-chunks/prop-types.js",
+            "vendor-chunks/react-popper.js",
+            "vendor-chunks/react-fast-compare.js",
+            "vendor-chunks/object-assign.js",
+            "vendor-chunks/dom-helpers.js",
+            "vendor-chunks/warning.js",
+            "vendor-chunks/classnames.js",
+            "vendor-chunks/@babel.js",
+            "pages/design-system/card-product.js",
+            "pages/design-system/buttons.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:next/script",
+      "name": "next/script",
+      "version": "14.2.3",
+      "singleton": true,
+      "requiredVersion": "^14.2.3",
+      "assets": {
+        "js": {
+          "async": [
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ],
+          "sync": [
+            "vendor-chunks/next.js",
+            "webpack-runtime.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/@module-federation.js",
+            "vendor-chunks/bootstrap.js",
+            "pages/_error.js",
+            "pages/_document.js",
+            "pages/module-federation/component.js",
+            "pages/index.js",
+            "pages/module-federation/custom-hook.js",
+            "vendor-chunks/reactstrap.js",
+            "vendor-chunks/@popperjs.js",
+            "vendor-chunks/react-transition-group.js",
+            "vendor-chunks/prop-types.js",
+            "vendor-chunks/react-popper.js",
+            "vendor-chunks/react-fast-compare.js",
+            "vendor-chunks/object-assign.js",
+            "vendor-chunks/dom-helpers.js",
+            "vendor-chunks/warning.js",
+            "vendor-chunks/classnames.js",
+            "vendor-chunks/@babel.js",
+            "pages/design-system/card-product.js",
+            "pages/design-system/buttons.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:react/jsx-dev-runtime",
+      "name": "react/jsx-dev-runtime",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "vendor-chunks/react-e78255b399bb3810.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:react/jsx-runtime",
+      "name": "react/jsx-runtime",
+      "version": "18.3.1",
+      "singleton": true,
+      "requiredVersion": "^18.3.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "vendor-chunks/react-e78255b399bb3810.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    },
+    {
+      "id": "store:styled-jsx",
+      "name": "styled-jsx",
+      "version": "5.1.1",
+      "singleton": true,
+      "requiredVersion": "^5.1.1",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": [
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ]
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "federationContainerName": "checkout",
+      "moduleName": "useAddToCartHook",
+      "alias": "checkout",
+      "entry": "http://localhost:4200/_next/static/ssr/remoteEntry.js"
+    },
+    {
+      "federationContainerName": "checkout",
+      "moduleName": "buy-button",
+      "alias": "checkout",
+      "entry": "http://localhost:4200/_next/static/ssr/remoteEntry.js"
+    }
+  ],
+  "exposes": [
+    {
+      "id": "store:noop",
+      "name": "noop",
+      "assets": {
+        "js": {
+          "sync": [
+            "vendor-chunks/@module-federation.js"
+          ],
+          "async": [
+            "vendor-chunks/react-e78255b399bb3810.js",
+            "vendor-chunks/next.js",
+            "vendor-chunks/@swc.js",
+            "vendor-chunks/styled-jsx-93fd322d52a445af.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./noop"
+    },
+    {
+      "id": "store:react",
+      "name": "react",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "path": "./react"
+    },
+    {
+      "id": "store:react-dom",
+      "name": "react-dom",
+      "assets": {
+        "js": {
+          "async": [],
+          "sync": []
+        },
+        "css": {
+          "async": [],
+          "sync": []
+        }
+      },
+      "path": "./react-dom"
+    },
+    {
+      "id": "store:next/router",
+      "name": "next/router",
+      "assets": {
+        "js": {
+          "sync": [
+            "vendor-chunks/next.js",
+            "vendor-chunks/@swc.js"
+          ],
+          "async": [
+            "vendor-chunks/react-e78255b399bb3810.js"
+          ]
+        },
+        "css": {
+          "sync": [],
+          "async": []
+        }
+      },
+      "path": "./next/router"
+    }
+  ]
+}
