@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@checkout/*": ["apps/checkout/*"],
+      "@store/*": ["apps/store/*"],
+      "@nextjs-nx-module-federation/design-system": [
+        "libs/design-system/src/index.ts"
+      ],
+      "@nextjs-nx-module-federation/design-system/*": [
+        "libs/design-system/src/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
