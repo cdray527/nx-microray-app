@@ -6,14 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 export default function CustomApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Head>
-        <title>Welcome to store!</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
-    </>
-  );
+    return (
+        <>
+            <Head>
+                <title>Welcome to store!</title>
+            </Head>
+            <main className="app">
+                <Component {...pageProps} />
+            </main>
+        </>
+    );
 }

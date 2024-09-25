@@ -6,11 +6,11 @@ import styles from './buy-button.module.css';
 export interface BuyButtonProps extends HTMLAttributes<HTMLButtonElement> {}
 
 export function BuyButton({ children, ...props }: BuyButtonProps) {
-  return (
-    <button className={styles['button']} {...props}>
-      {children || `Buy now!`}
-    </button>
-  );
+    return (
+        <button className={styles['button']} {...props}>
+            {children || `Buy now!`}
+        </button>
+    );
 }
 
 export default BuyButton;
