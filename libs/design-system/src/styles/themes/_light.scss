@@ -1,0 +1,22 @@
+// Apply the light theme
+:root {
+    --border: #{$border-light};
+    --input: #{$input-light};
+    --ring: #{$ring-light};
+    --background: #{$background-light};
+    --foreground: #{$foreground-light};
+    --primary: #{$primary-light};
+    --primary-foreground: #{$primary-foreground-light};
+    --secondary: #{$secondary-light};
+    --secondary-foreground: #{$secondary-foreground-light};
+    --destructive: #{$destructive-light};
+    --destructive-foreground: #{$destructive-foreground-light};
+    --muted: #{$muted-light};
+    --muted-foreground: #{$muted-foreground-light};
+    --accent: #{$accent-light};
+    --accent-foreground: #{$accent-foreground-light};
+    --popover: #{$popover-light};
+    --popover-foreground: #{$popover-foreground-light};
+    --card: #{$card-light};
+    --card-foreground: #{$card-foreground-light};
+}

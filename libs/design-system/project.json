@@ -19,7 +19,11 @@
             "executor": "@nx/storybook:storybook",
             "options": {
                 "port": 4400,
-                "configDir": "libs/design-system/.storybook"
+                "configDir": "libs/design-system/.storybook",
+                "styles": ["libs/design-system/src/styles/global.scss"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/design-system/src/styles/"]
+                }
             },
             "configurations": {
                 "ci": {
@@ -32,7 +36,11 @@
             "outputs": ["{options.outputDir}"],
             "options": {
                 "outputDir": "dist/storybook/design-system",
-                "configDir": "libs/design-system/.storybook"
+                "configDir": "libs/design-system/.storybook",
+                "styles": ["libs/design-system/src/styles/global.scss"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["libs/design-system/src/styles/"]
+                }
             },
             "configurations": {
                 "ci": {

@@ -1,0 +1,22 @@
+// Apply the dark theme using a class (or selector)
+.dark-theme {
+    --border: #{$border-dark};
+    --input: #{$input-dark};
+    --ring: #{$ring-dark};
+    --background: #{$background-dark};
+    --foreground: #{$foreground-dark};
+    --primary: #{$primary-dark};
+    --primary-foreground: #{$primary-foreground-dark};
+    --secondary: #{$secondary-dark};
+    --secondary-foreground: #{$secondary-foreground-dark};
+    --destructive: #{$destructive-dark};
+    --destructive-foreground: #{$destructive-foreground-dark};
+    --muted: #{$muted-dark};
+    --muted-foreground: #{$muted-foreground-dark};
+    --accent: #{$accent-dark};
+    --accent-foreground: #{$accent-foreground-dark};
+    --popover: #{$popover-dark};
+    --popover-foreground: #{$popover-foreground-dark};
+    --card: #{$card-dark};
+    --card-foreground: #{$card-foreground-dark};
+}

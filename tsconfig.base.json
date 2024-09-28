@@ -16,9 +16,10 @@
         "baseUrl": ".",
         "paths": {
             "@checkout/*": ["apps/checkout/*"],
-            "@nextjs-nx-module-federation/design-system": ["libs/design-system/src/index.ts"],
-            "@nextjs-nx-module-federation/design-system/*": ["libs/design-system/src/*"],
-            "@store/*": ["apps/store/*"]
+            "@store/*": ["apps/store/*"],
+            "@design-system/components/*": ["libs/design-system/src/components/*"],
+            "@design-system/stories/*": ["libs/design-system/src/stories/*"],
+            "@design-system/styles/*": ["libs/design-system/src/styles/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]
