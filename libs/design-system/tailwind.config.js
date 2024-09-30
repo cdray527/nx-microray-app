@@ -6,82 +6,44 @@ const { join } = require('path');
 module.exports = {
     darkMode: 'selector',
     content: [
-        join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
+        join(__dirname, '{src,pages,components,app}/**/*!(*.spec).{ts,tsx,html}'),
         ...createGlobPatternsForDependencies(__dirname)
     ],
     theme: {
         extend: {
             colors: {
-                // Light Theme (default)
-                border: '#E2E8F0', // Light gray border
-                input: '#F7FAFC', // Light input background
-                ring: '#3182CE', // Light blue ring (focus outline)
-                background: '#FFFFFF', // White background
-                foreground: '#2D3748', // Darker gray for text
+                border: 'var(--border)',
+                input: 'var(--input)',
+                ring: 'var(--ring)',
+                background: 'var(--background)',
+                foreground: 'var(--foreground)',
                 primary: {
-                    DEFAULT: '#2B6CB0', // Light blue primary color
-                    foreground: '#FFFFFF' // White text on primary
+                    DEFAULT: 'var(--primary)',
+                    foreground: 'var(--primary-foreground)'
                 },
                 secondary: {
-                    DEFAULT: '#6c757d',
-                    foreground: '#FFFFFF' // White text on secondary
+                    DEFAULT: 'var(--secondary)',
+                    foreground: 'var(--secondary-foreground)'
                 },
                 destructive: {
-                    DEFAULT: '#E53E3E', // Light red destructive color
-                    foreground: '#FFFFFF' // White text for destructive actions
+                    DEFAULT: 'var(--destructive)',
+                    foreground: 'var(--destructive-foreground)'
                 },
                 muted: {
-                    DEFAULT: '#CBD5E0', // Muted gray color
-                    foreground: '#2D3748' // Darker gray for readability
+                    DEFAULT: 'var(--muted)',
+                    foreground: 'var(--muted-foreground)'
                 },
                 accent: {
-                    DEFAULT: '#38B2AC', // Light teal accent color
-                    foreground: '#FFFFFF' // White text on accent
+                    DEFAULT: 'var(--accent)',
+                    foreground: 'var(--accent-foreground)'
                 },
                 popover: {
-                    DEFAULT: '#F7FAFC', // Light background for popovers
-                    foreground: '#2D3748' // Darker gray text for popovers
+                    DEFAULT: 'var(--popover)',
+                    foreground: 'var(--popover-foreground)'
                 },
                 card: {
-                    DEFAULT: '#FFFFFF', // White card background
-                    foreground: '#2D3748' // Darker gray text for cards
-                },
-
-                // Dark Theme (using a selector for dark mode)
-                dark: {
-                    border: '#4A5568', // Darker gray border
-                    input: '#2D3748', // Dark input background
-                    ring: '#63B3ED', // Lighter blue ring (focus outline)
-                    background: '#1A202C', // Dark background
-                    foreground: '#E2E8F0', // Lighter gray for text
-                    primary: {
-                        DEFAULT: '#4299E1', // Dark blue primary color
-                        foreground: '#1A202C' // Darker foreground for primary elements
-                    },
-                    secondary: {
-                        DEFAULT: '#D53F8C', // Dark pink secondary color
-                        foreground: '#1A202C' // Darker foreground for secondary elements
-                    },
-                    destructive: {
-                        DEFAULT: '#F56565', // Dark red destructive color
-                        foreground: '#1A202C' // Darker foreground for destructive elements
-                    },
-                    muted: {
-                        DEFAULT: '#4A5568', // Muted dark gray
-                        foreground: '#E2E8F0' // Lighter gray for readability
-                    },
-                    accent: {
-                        DEFAULT: '#4FD1C5', // Dark teal accent color
-                        foreground: '#1A202C' // Darker foreground on accents
-                    },
-                    popover: {
-                        DEFAULT: '#2D3748', // Dark popover background
-                        foreground: '#E2E8F0' // Lighter gray text for popovers
-                    },
-                    card: {
-                        DEFAULT: '#2D3748', // Dark card background
-                        foreground: '#E2E8F0' // Lighter gray text for cards
-                    }
+                    DEFAULT: 'var(--card)',
+                    foreground: 'var(--card-foreground)'
                 }
             },
             screens: {
@@ -93,5 +55,6 @@ module.exports = {
             }
         }
     },
+    safelist: ['bg-background'],
     plugins: []
 };

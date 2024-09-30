@@ -1,4 +1,5 @@
-import type { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react';
+import { withThemeByDataAttribute, withThemeByClassName } from '@storybook/addon-themes';
 import '@design-system/styles/global.scss';
 
 const preview: Preview = {
@@ -8,7 +9,8 @@ const preview: Preview = {
                 color: /(background|color)$/i,
                 date: /Date$/i
             }
-        }
+        },
+        backgrounds: { disable: true }
         // options: {
         //     assetPrefix: '/storybook',
         // },
@@ -18,7 +20,24 @@ const preview: Preview = {
         //       pathname: '/app/',
         //     },
         // },
-    }
+    },
+    decorators: [
+        withThemeByDataAttribute({
+            themes: {
+                light: 'light',
+                dark: 'dark'
+            },
+            defaultTheme: 'light',
+            attributeName: 'data-theme'
+        }),
+        withThemeByClassName({
+            themes: {
+                light: 'light bg-background',
+                dark: 'dark bg-background'
+            },
+            defaultTheme: 'light'
+        })
+    ]
 };
 
 export default preview;

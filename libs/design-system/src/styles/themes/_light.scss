@@ -1,22 +1,29 @@
 // Apply the light theme
 :root {
-    --border: #{$border-light};
-    --input: #{$input-light};
-    --ring: #{$ring-light};
-    --background: #{$background-light};
-    --foreground: #{$foreground-light};
-    --primary: #{$primary-light};
-    --primary-foreground: #{$primary-foreground-light};
-    --secondary: #{$secondary-light};
-    --secondary-foreground: #{$secondary-foreground-light};
-    --destructive: #{$destructive-light};
-    --destructive-foreground: #{$destructive-foreground-light};
-    --muted: #{$muted-light};
-    --muted-foreground: #{$muted-foreground-light};
-    --accent: #{$accent-light};
-    --accent-foreground: #{$accent-foreground-light};
-    --popover: #{$popover-light};
-    --popover-foreground: #{$popover-foreground-light};
-    --card: #{$card-light};
-    --card-foreground: #{$card-foreground-light};
+    --border: #e2e8f0;
+    --input: #f7fafc;
+    --ring: #3182ce;
+    --background: #ffffff;
+    --foreground: #2d3748;
+
+    --primary: #2b6cb0;
+    --primary-foreground: #ffffff;
+
+    --secondary: #6c757d;
+    --secondary-foreground: #ffffff;
+
+    --destructive: #e53e3e;
+    --destructive-foreground: #ffffff;
+
+    --muted: #cbd5e0;
+    --muted-foreground: #2d3748;
+
+    --accent: #38b2ac;
+    --accent-foreground: #ffffff;
+
+    --popover: #f7fafc;
+    --popover-foreground: #2d3748;
+
+    --card: #ffffff;
+    --card-foreground: #2d3748;
 }

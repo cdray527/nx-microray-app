@@ -1,22 +1,28 @@
-// Apply the dark theme using a class (or selector)
-.dark-theme {
-    --border: #{$border-dark};
-    --input: #{$input-dark};
-    --ring: #{$ring-dark};
-    --background: #{$background-dark};
-    --foreground: #{$foreground-dark};
-    --primary: #{$primary-dark};
-    --primary-foreground: #{$primary-foreground-dark};
-    --secondary: #{$secondary-dark};
-    --secondary-foreground: #{$secondary-foreground-dark};
-    --destructive: #{$destructive-dark};
-    --destructive-foreground: #{$destructive-foreground-dark};
-    --muted: #{$muted-dark};
-    --muted-foreground: #{$muted-foreground-dark};
-    --accent: #{$accent-dark};
-    --accent-foreground: #{$accent-foreground-dark};
-    --popover: #{$popover-dark};
-    --popover-foreground: #{$popover-foreground-dark};
-    --card: #{$card-dark};
-    --card-foreground: #{$card-foreground-dark};
+html[data-theme='dark'] {
+    --border: #4a5568;
+    --input: #2d3748;
+    --ring: #63b3ed;
+    --background: #1a202c;
+    --foreground: #e2e8f0;
+
+    --primary: #4299e1;
+    --primary-foreground: #1a202c;
+
+    --secondary: #d53f8c;
+    --secondary-foreground: #1a202c;
+
+    --destructive: #f56565;
+    --destructive-foreground: #1a202c;
+
+    --muted: #4a5568;
+    --muted-foreground: #e2e8f0;
+
+    --accent: #4fd1c5;
+    --accent-foreground: #1a202c;
+
+    --popover: #2d3748;
+    --popover-foreground: #e2e8f0;
+
+    --card: #2d3748;
+    --card-foreground: #e2e8f0;
 }
