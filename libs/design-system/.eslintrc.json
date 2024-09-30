@@ -4,7 +4,9 @@
     "overrides": [
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-            "rules": {}
+            "rules": {
+                "jsx-a11y/heading-has-content": "off"
+            }
         },
         {
             "files": ["*.ts", "*.tsx"],
