@@ -14,14 +14,14 @@ export function HeaderNav() {
                 <Link
                     // href={paths.docs.root}
                     href=""
-                    className="transition-colors hover:text-foreground/80"
+                    className="transition-colors text-primary hover:text-foreground/80"
                 >
                     Docs
                 </Link>
                 <Link
                     // href={paths.product.root}
                     href=""
-                    className="transition-colors hover:text-foreground/80"
+                    className="transition-colors text-primary hover:text-foreground/80"
                 >
                     Demo
                 </Link>

@@ -2,8 +2,9 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import '@design-system/styles/global.scss';
+// import './styles.css';
 
 export default function CustomApp({ Component, pageProps }: AppProps) {
     return (

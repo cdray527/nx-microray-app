@@ -1,4 +1,4 @@
 export * from './CardProduct';
 export * from './Card';
 export * from './Header';
-export * from './SidebarMenu';
+export * from './DrawerMenu';

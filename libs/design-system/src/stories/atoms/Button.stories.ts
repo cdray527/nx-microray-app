@@ -20,15 +20,24 @@ const meta = {
                 options: ['small', 'medium', 'large'],
             },
         },
+        icon: {
+            control: 'text',
+            description: 'Icon from URL or Iconify',
+        },
+        iconPosition: {
+            control: {
+                type: 'radio',
+                options: ['left', 'right'],
+            },
+        },
     },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+    args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// Basic button stories
 export const Primary: Story = {
   args: {
     label: 'Primary Button (Default)',
@@ -53,5 +62,14 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Small Button',
+  },
+};
+
+// New stories with icons
+export const WithIcon: Story = {
+  args: {
+    label: 'Button with Icon (Left)',
+    icon: 'mdi:home', // Example Iconify icon
+    iconPosition: 'left',
   },
 };
