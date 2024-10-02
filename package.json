@@ -23,6 +23,7 @@
         "tslib": "^2.3.0"
     },
     "devDependencies": {
+        "@iconify/react": "^5.0.2",
         "@nx/cypress": "19.8.0",
         "@nx/eslint": "19.8.0",
         "@nx/eslint-plugin": "19.8.0",
@@ -33,6 +34,7 @@
         "@nx/storybook": "^19.8.0",
         "@nx/web": "19.8.0",
         "@nx/workspace": "19.8.0",
+        "@storybook/addon-docs": "^8.3.4",
         "@storybook/addon-essentials": "^8.2.8",
         "@storybook/addon-interactions": "^8.2.8",
         "@storybook/addon-themes": "^8.3.4",

@@ -6,11 +6,15 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
         '@storybook/addon-themes',
+        '@storybook/addon-docs',
         '@nx/react/plugins/storybook'
     ],
     framework: {
         name: '@storybook/react-webpack5',
         options: {}
+    },
+    docs: {
+        autodocs: true
     }
 };
 
