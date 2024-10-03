@@ -16,10 +16,12 @@
         "baseUrl": ".",
         "paths": {
             "@checkout/*": ["apps/checkout/*"],
+            "@design-system/*": ["libs/design-system/*"],
             "@design-system/components/*": ["libs/design-system/src/components/*"],
             "@design-system/stories/*": ["libs/design-system/src/stories/*"],
             "@design-system/styles/*": ["libs/design-system/src/styles/*"],
-            "@store/*": ["apps/store/*"]
+            "@store/*": ["apps/store/*"],
+            "@hooks": ["libs/hooks/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
