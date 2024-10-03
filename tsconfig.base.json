@@ -16,10 +16,10 @@
         "baseUrl": ".",
         "paths": {
             "@checkout/*": ["apps/checkout/*"],
-            "@store/*": ["apps/store/*"],
             "@design-system/components/*": ["libs/design-system/src/components/*"],
             "@design-system/stories/*": ["libs/design-system/src/stories/*"],
-            "@design-system/styles/*": ["libs/design-system/src/styles/*"]
+            "@design-system/styles/*": ["libs/design-system/src/styles/*"],
+            "@store/*": ["apps/store/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

@@ -41,6 +41,11 @@
                 "{projectRoot}/.storybook/**/*",
                 "{projectRoot}/tsconfig.storybook.json"
             ]
+        },
+        "@nx/next:build": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["default", "^default"]
         }
     },
     "generators": {
