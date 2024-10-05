@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './index.module.css';
-import Header from '@design-system/components/molecules/Header';
+import Header from '@design-system/components/organisms/Header';
 
 export function Page() {
     return (
