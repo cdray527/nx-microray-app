@@ -1,72 +1,87 @@
-import React from 'react';
-import classNames from 'classnames';
-import { Iconify, IconifyProps } from '@design-system/components/atoms';
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { Iconify } from '@design-system/components/atoms';
+import cn from 'classnames';
 
-interface ButtonProps {
-    variant?: 'primary' | 'secondary';
-    size?: 'small' | 'medium' | 'large';
-    label: string;
-    onClick?: () => void;
-    disabled?: boolean;
-    icon?: IconifyProps; // Icon can be from Iconify
-    iconUrl?: 'string'; // Icon Url
-    iconPosition?: 'left' | 'right'; // Position of the icon
-}
-
-export const Button: React.FC<ButtonProps> = ({
-    variant = 'primary',
-    size = 'medium',
-    label,
-    onClick,
-    disabled = false,
-    icon,
-    iconUrl,
-    iconPosition = 'left', // Default icon position to left
-    ...props
-}) => {
-    const baseStyles = 'rounded focus:outline-none font-bold transition-colors duration-200';
-    const sizeStyles = {
-        small: 'text-sm py-1 px-3',
-        medium: 'text-base py-2 px-4',
-        large: 'text-lg py-3 px-6'
-    }[size];
-
-    const variantStyles = {
-        primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/90'
-    }[variant];
-
-    const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : '';
-
-    const renderIcon = () => {
-        if (icon) {
-            // If icon is from Iconify
-            return <Iconify icon={icon} className="inline-block" width={20} />;
-        } else if (iconUrl) {
-            // If icon is a URL
-            return <img src={iconUrl} alt="icon" className="inline-block w-5 h-5" />;
+const buttonVariants = cva(
+    'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+    {
+        variants: {
+            variant: {
+                default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
+                destructive:
+                    'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
+                outline:
+                    'border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground',
+                secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
+                ghost: 'hover:bg-accent hover:text-accent-foreground',
+                link: 'text-primary underline-offset-4 hover:underline'
+            },
+            size: {
+                default: 'h-9 px-4 py-2',
+                sm: 'h-8 rounded-md px-3 text-xs',
+                lg: 'h-10 rounded-md px-8',
+                icon: 'h-9 w-9'
+            }
+        },
+        defaultVariants: {
+            variant: 'default',
+            size: 'default'
         }
-        return null;
-    };
+    }
+);
 
-    return (
-        <button
-            className={classNames(
-                baseStyles,
-                sizeStyles,
-                variantStyles,
-                disabledStyles,
-                'flex items-center justify-center'
-            )}
-            onClick={onClick}
-            disabled={disabled}
-            {...props}
-        >
-            {(icon || iconUrl) && iconPosition === 'left' && renderIcon()}
-            <span className={classNames(icon ? 'ml-2' : '')}>{label}</span>
-            {(icon || iconUrl) && iconPosition === 'right' && renderIcon()}
-        </button>
-    );
+const renderIcon = (icon: string | undefined, iconUrl: string | undefined) => {
+    if (icon) {
+        // If icon is from Iconify
+        return <Iconify icon={icon} className="inline-block" width={20} />;
+    } else if (iconUrl) {
+        // If icon is a URL
+        return <img src={iconUrl} alt="icon" className="inline-block w-5 h-5" />;
+    }
+    return null;
 };
 
-export default Button;
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+        VariantProps<typeof buttonVariants> {
+    asChild?: boolean;
+    label?: string;
+    icon?: string; // Add icon prop
+    iconUrl?: string;
+    iconPosition?: 'left' | 'right'; // Add iconPosition prop
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    (
+        {
+            className,
+            variant,
+            size,
+            asChild = false,
+            label,
+            icon,
+            iconUrl,
+            iconPosition = 'left',
+            children,
+            ...props
+        },
+        ref
+    ) => {
+        const Comp = asChild ? Slot : 'button';
+
+        return (
+            <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
+                {(icon || iconUrl) && iconPosition === 'left' && renderIcon(icon, iconUrl)}
+                {label && <span>{label}</span>} {/* Render the label if provided */}
+                {children}
+                {(icon || iconUrl) && iconPosition === 'right' && renderIcon(icon, iconUrl)}
+            </Comp>
+        );
+    }
+);
+
+Button.displayName = 'Button';
+
+export { Button, buttonVariants };

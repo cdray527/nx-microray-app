@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Header from '@design-system/components/molecules/Header'; // Ensure the path is correct
+import Header from '@design-system/src/components/organisms/Header'; // Ensure the path is correct
 
 const meta: Meta<typeof Header> = {
-    title: 'Components/Molecules/Header', // Updated title path
+    title: 'Components/Organisms/Header', // Updated title path
     component: Header
 };
 

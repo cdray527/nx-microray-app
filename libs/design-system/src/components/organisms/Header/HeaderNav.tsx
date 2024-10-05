@@ -1,4 +1,14 @@
 import Link from 'next/link';
+
+import {
+    DropdownMenu,
+    DropdownMenuTrigger,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    Button,
+    Iconify
+} from '@design-system/components/atoms';
+
 // routes
 // import { paths } from "@repo/utils/routes/paths";
 // components
@@ -25,6 +35,18 @@ export function HeaderNav() {
                 >
                     Demo
                 </Link>
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="icon">
+                            <Iconify icon="solar:sun-2-linear" className="h-[1.2rem] w-[1.2rem]" />
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                        <DropdownMenuItem>Light</DropdownMenuItem>
+                        <DropdownMenuItem>Dark</DropdownMenuItem>
+                        <DropdownMenuItem>System</DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </nav>
         </div>
     );

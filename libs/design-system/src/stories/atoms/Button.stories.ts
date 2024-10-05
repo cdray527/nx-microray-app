@@ -11,13 +11,13 @@ const meta = {
         variant: {
             control: {
                 type: 'select',
-                options: ['primary', 'secondary'],
+                options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
             },
         },
         size: {
             control: {
                 type: 'select',
-                options: ['small', 'medium', 'large'],
+                options: ['default', 'sm', 'lg', 'icon'],
             },
         },
         icon: {
@@ -38,9 +38,24 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Basic button stories
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    label: 'Primary Button (Default)',
+    label: 'Default Button',
+    variant: 'default',
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    variant: 'destructive',
+    label: 'Destructive Button',
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    variant: 'outline',
+    label: 'Outline Button',
   },
 };
 
@@ -51,25 +66,48 @@ export const Secondary: Story = {
   },
 };
 
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    label: 'Ghost Button',
+  },
+};
+
+export const Link: Story = {
+  args: {
+    variant: 'link',
+    label: 'Link Button',
+  },
+};
+
+// Button size stories
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: 'lg',
     label: 'Large Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: 'sm',
     label: 'Small Button',
   },
 };
 
-// New stories with icons
+// Button with icon stories
 export const WithIcon: Story = {
   args: {
     label: 'Button with Icon (Left)',
     icon: 'mdi:home', // Example Iconify icon
     iconPosition: 'left',
+  },
+};
+
+export const IconOnly: Story = {
+  args: {
+    size: 'icon',
+    icon: 'mdi:home', // Example Iconify icon
+    'aria-label': 'Icon only button',
   },
 };
