@@ -93,3 +93,17 @@ npx nx g @nx/next:lib new-lib-name
 ## Sharing
 
 Other information can be found in the [article](#articles), I also strongly recommend you to take a look at the [module-federation-examples](https://github.com/module-federation/module-federation-examples), especially this [example with nextjs](https://github.com/module-federation/module-federation-examples/tree/master/nextjs)
+
+## Design System Storybook
+
+nx storybook design-system
+
+## Setup new App steps
+
+1. npx nx g @nx/next:app app-name
+2. nx g @nx/react:setup-tailwind --project=<your app here>
+3. Update tailwind config
+   /\*_ @type {import('tailwindcss').Config} _/
+   module.exports = {
+   presets: [require('../../libs/design-system/tailwind.config.js')]
+   };

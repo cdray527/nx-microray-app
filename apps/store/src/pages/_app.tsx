@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@hooks';
 import '@design-system/styles/global.scss';
 
-function HostApp({ Component, pageProps }: AppProps) {
+function StoreApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <main className="app">
@@ -14,4 +14,4 @@ function HostApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default HostApp;
+export default StoreApp;
