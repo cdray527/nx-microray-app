@@ -9,7 +9,7 @@ const nextConfig = {
     nx: {
         // Set this to true if you would like to to use SVGR
         // See: https://github.com/gregberge/svgr
-        svgr: false,
+        svgr: false
     },
     /**
      *
@@ -23,18 +23,18 @@ const nextConfig = {
                 filename: 'static/chunks/remoteEntry.js',
                 remotes: {},
                 extraOptions: {
-                    automaticAsyncBoundary: true,
+                    automaticAsyncBoundary: true
                 },
                 exposes: {
                     './buy-button': './components/buy-button/buy-button.tsx',
-                    './useAddToCartHook': './hooks/useAddToCart.ts',
+                    './useAddToCartHook': './hooks/useAddToCart.ts'
                 },
-                shared: {},
+                shared: {}
             })
         );
 
         return config;
-    },
+    }
 };
 
 module.exports = withNx(nextConfig);

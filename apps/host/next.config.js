@@ -8,7 +8,6 @@ const remotes = (isServer) => {
     const location = isServer ? 'ssr' : 'chunks';
 
     return {
-        host: `host@${process.env.NEXT_PUBLIC_HOST_URL}/_next/static/${location}/remoteEntry.js`,
         store: `store@${process.env.NEXT_PUBLIC_STORE_URL}/_next/static/${location}/remoteEntry.js`,
         checkout: `checkout@${process.env.NEXT_PUBLIC_CHECKOUT_URL}/_next/static/${location}/remoteEntry.js`
     };

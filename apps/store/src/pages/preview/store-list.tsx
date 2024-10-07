@@ -1,4 +1,4 @@
-import { StoreList } from '../../components/molecules';
+import StoreList from '../../components/StoreList/StoreList';
 
 export default function DevStoreComponentPreviewPage() {
     return <StoreList />;
