@@ -4,7 +4,7 @@ const { join } = require('path');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: 'selector',
+    darkMode: ['class', '[data-mode="dark"]'],
     content: [
         join(__dirname, '{src,pages,components,app}/**/*!(*.spec).{ts,tsx,html}'),
         ...createGlobPatternsForDependencies(__dirname)
@@ -15,8 +15,12 @@ module.exports = {
                 border: 'var(--border)',
                 input: 'var(--input)',
                 ring: 'var(--ring)',
-                background: 'var(--background)',
-                foreground: 'var(--foreground)',
+                background: {
+                    DEFAULT: 'var(--background)'
+                },
+                foreground: {
+                    DEFAULT: 'var(--foreground)'
+                },
                 primary: {
                     DEFAULT: 'var(--primary)',
                     foreground: 'var(--primary-foreground)'

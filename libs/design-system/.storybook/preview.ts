@@ -29,13 +29,6 @@ const preview: Preview = {
             },
             defaultTheme: 'light',
             attributeName: 'data-theme'
-        }),
-        withThemeByClassName({
-            themes: {
-                light: 'light bg-background',
-                dark: 'dark bg-background'
-            },
-            defaultTheme: 'light'
         })
     ]
 };
