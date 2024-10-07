@@ -5,6 +5,10 @@ import { MainLayout } from '@design-system/components/templates'; // Make sure t
 const meta: Meta<typeof MainLayout> = {
     title: 'Components/Templates/MainLayout',
     component: MainLayout,
+    parameters: {
+        layout: 'fullscreen'
+    },
+    tags: ['!autodocs'],
     decorators: [
         (Story) => (
             <div className="h-screen">

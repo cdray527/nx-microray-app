@@ -5,10 +5,10 @@ export default function Home() {
     return (
         <div>
             <Head>
-                <title>NX Microray App</title>
+                <title>HOST APP</title>
             </Head>
             <MainLayout>
-                <div>Hello</div>
+                <div>HOST APP</div>
             </MainLayout>
         </div>
     );
