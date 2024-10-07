@@ -13,7 +13,7 @@ import { HeaderNav } from './HeaderNav';
 
 // ----------------------------------------------------------------------
 
-export default function Header() {
+export function Header() {
     return (
         <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/70">
             <div className="container flex h-16 items-center">

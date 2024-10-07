@@ -1,6 +1,6 @@
 import { Preview } from '@storybook/react';
 import { withThemeByDataAttribute, withThemeByClassName } from '@storybook/addon-themes';
-import '@design-system/styles/global.scss';
+import '../src/styles/global.scss';
 
 const preview: Preview = {
     parameters: {

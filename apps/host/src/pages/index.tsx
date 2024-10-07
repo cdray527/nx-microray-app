@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '@design-system/components/organisms/Header';
+import { MainLayout } from '@design-system/components/templates';
 
 export default function Home() {
     return (
@@ -7,9 +7,9 @@ export default function Home() {
             <Head>
                 <title>NX Microray App</title>
             </Head>
-            <div>
-                <Header />
-            </div>
+            <MainLayout>
+                <div>Hello</div>
+            </MainLayout>
         </div>
     );
 }

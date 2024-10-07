@@ -5,7 +5,8 @@
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
             "rules": {
-                "jsx-a11y/heading-has-content": "off"
+                "jsx-a11y/heading-has-content": "off",
+                "@nx/enforce-module-boundaries": "off"
             }
         },
         {
