@@ -49,3 +49,6 @@ Thumbs.db
 # Next Js App cache
 .cache
 .next
+
+# Dev Pages
+**/pages/dev/
