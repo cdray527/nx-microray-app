@@ -12,7 +12,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                border: 'var(--border)',
+                'bordercolor-default': 'var(--border)',
                 input: 'var(--input)',
                 ring: 'var(--ring)',
                 background: {

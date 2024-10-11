@@ -1,38 +1,30 @@
 'use client';
-
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-    Iconify,
-    Button
-} from '@design-system/components/atoms';
+import * as Toggle from '@radix-ui/react-toggle';
+import { Iconify } from '@design-system/components/atoms';
 import { useTheme } from 'next-themes';
 
 export function ThemeToggler() {
-    const { setTheme } = useTheme();
+    const { theme, setTheme } = useTheme();
 
+    const isDarkMode = theme === 'dark';
     return (
-        <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                    <Iconify
-                        icon="solar:sun-2-linear"
-                        className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-                    />
-                    <Iconify
-                        icon="solar:moon-stars-linear"
-                        className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-                    />
-                    <span className="sr-only">Toggle theme</span>
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
+        <Toggle.Root
+            pressed={isDarkMode}
+            onPressedChange={() => setTheme(isDarkMode ? 'light' : 'dark')}
+            aria-label="Toggle theme"
+            className="border border-color flex size-[35px] items-center justify-center rounded"
+        >
+            {isDarkMode ? (
+                <Iconify
+                    icon="solar:moon-stars-linear"
+                    className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-100 transition-all dark:rotate-0 dark:scale-100"
+                />
+            ) : (
+                <Iconify
+                    icon="solar:sun-2-linear"
+                    className="h-[1.2rem] w-[1.2rem] text-black rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                />
+            )}
+        </Toggle.Root>
     );
 }

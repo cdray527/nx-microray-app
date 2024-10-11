@@ -2,6 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
-    @apply bg-background text-foreground;
+@layer base {
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    .border-color {
+        @apply border-bordercolor-default;
+    }
 }
