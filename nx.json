@@ -64,7 +64,8 @@
             }
         }
     },
-    "defaultProject": "store",
+    "defaultProject": "host",
     "useInferencePlugins": false,
-    "defaultBase": "main"
+    "defaultBase": "main",
+    "parallel": 5
 }

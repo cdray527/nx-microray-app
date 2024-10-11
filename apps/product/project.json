@@ -1,7 +1,7 @@
 {
-    "name": "checkout",
+    "name": "product",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "apps/checkout",
+    "sourceRoot": "apps/product",
     "projectType": "application",
     "tags": [],
     "targets": {
@@ -10,10 +10,12 @@
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
             "options": {
-                "outputPath": "dist/apps/checkout"
+                "outputPath": "dist/apps/product"
             },
             "configurations": {
-                "development": {},
+                "development": {
+                    "outputPath": "apps/product"
+                },
                 "production": {}
             }
         },
@@ -21,17 +23,17 @@
             "executor": "@nx/next:server",
             "defaultConfiguration": "development",
             "options": {
-                "buildTarget": "checkout:build",
+                "buildTarget": "product:build",
                 "dev": true,
-                "port": 4300
+                "port": 4200
             },
             "configurations": {
                 "development": {
-                    "buildTarget": "checkout:build:development",
+                    "buildTarget": "product:build:development",
                     "dev": true
                 },
                 "production": {
-                    "buildTarget": "checkout:build:production",
+                    "buildTarget": "product:build:production",
                     "dev": false
                 }
             }
@@ -39,14 +41,14 @@
         "export": {
             "executor": "@nx/next:export",
             "options": {
-                "buildTarget": "checkout:build:production"
+                "buildTarget": "product:build:production"
             }
         },
         "test": {
             "executor": "@nx/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/apps/checkout"],
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "apps/checkout/jest.config.ts"
+                "jestConfig": "apps/product/jest.config.ts"
             }
         },
         "lint": {

@@ -11,6 +11,7 @@ const remotes = (isServer) => {
     const location = isServer ? 'ssr' : 'chunks';
 
     return {
+        store: `store@${process.env.NEXT_PUBLIC_STORE_URL}/_next/static/${location}/remoteEntry.js`,
         checkout: `checkout@${process.env.NEXT_PUBLIC_CHECKOUT_URL}/_next/static/${location}/remoteEntry.js`
     };
 };
@@ -32,15 +33,13 @@ const nextConfig = {
     webpack(config, { isServer }) {
         config.plugins.push(
             new NextFederationPlugin({
-                name: 'store',
+                name: 'product',
                 filename: 'static/chunks/remoteEntry.js',
                 remotes: remotes(isServer),
                 extraOptions: {
                     automaticAsyncBoundary: true
                 },
-                exposes: {
-                    './store-list': './src/components/StoreList/StoreList.tsx'
-                },
+                exposes: {},
                 shared: {}
             })
         );

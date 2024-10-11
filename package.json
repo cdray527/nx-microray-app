@@ -18,6 +18,7 @@
         "class-variance-authority": "^0.7.0",
         "classnames": "^2.3.1",
         "core-js": "^3.36.1",
+        "dotenv": "^16.4.5",
         "flowbite": "^2.5.2",
         "flowbite-react": "^0.10.2",
         "next": "14.2.3",

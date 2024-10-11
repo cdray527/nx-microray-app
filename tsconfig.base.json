@@ -16,13 +16,13 @@
         "baseUrl": ".",
         "paths": {
             "@checkout/*": ["apps/checkout/*"],
-            "@store/*": ["apps/store/*"],
-            "@store/components/*": ["apps/store/src/components/*"],
             "@design-system/*": ["libs/design-system/*"],
             "@design-system/components/*": ["libs/design-system/src/components/*"],
             "@design-system/stories/*": ["libs/design-system/src/stories/*"],
             "@design-system/styles/*": ["libs/design-system/src/styles/*"],
-            "@hooks": ["libs/hooks/src/index.ts"]
+            "@hooks": ["libs/hooks/src/index.ts"],
+            "@store/*": ["apps/store/*"],
+            "@store/components/*": ["apps/store/src/components/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

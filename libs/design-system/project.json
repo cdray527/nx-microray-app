@@ -18,7 +18,7 @@
         "storybook": {
             "executor": "@nx/storybook:storybook",
             "options": {
-                "port": 4400,
+                "port": 6006,
                 "configDir": "libs/design-system/.storybook",
                 "styles": ["libs/design-system/src/styles/global.scss"],
                 "stylePreprocessorOptions": {
