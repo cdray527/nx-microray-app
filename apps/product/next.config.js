@@ -35,11 +35,14 @@ const nextConfig = {
             new NextFederationPlugin({
                 name: 'product',
                 filename: 'static/chunks/remoteEntry.js',
-                remotes: remotes(isServer),
+                // remotes: remotes(isServer),
                 extraOptions: {
                     automaticAsyncBoundary: true
                 },
-                exposes: {},
+                exposes: {
+                    './featured-product-list':
+                        './src/components/FeaturedProductList/FeaturedProductList.tsx'
+                },
                 shared: {}
             })
         );
