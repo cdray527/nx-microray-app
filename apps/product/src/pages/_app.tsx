@@ -1,18 +1,17 @@
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import { ThemeProvider } from '@hooks';
+import '@design-system/styles/global.scss';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+function ProductApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            <Head>
-                <title>Welcome to product!</title>
-            </Head>
             <main className="app">
-                <Component {...pageProps} />
+                <ThemeProvider>
+                    <Component {...pageProps} />
+                </ThemeProvider>
             </main>
         </>
     );
 }
 
-export default CustomApp;
+export default ProductApp;

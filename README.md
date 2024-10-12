@@ -110,3 +110,5 @@ nx storybook design-system
    presets: [require('../../libs/design-system/tailwind.config.js')]
    };
 6. Check nx.json , if number of apps is exceeding "parallel" setting
+7. Add .env
+8. Update next.config.js

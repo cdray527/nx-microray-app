@@ -22,7 +22,9 @@
             "@design-system/styles/*": ["libs/design-system/src/styles/*"],
             "@hooks": ["libs/hooks/src/index.ts"],
             "@store/*": ["apps/store/*"],
-            "@store/components/*": ["apps/store/src/components/*"]
+            "@store/components/*": ["apps/store/src/components/*"],
+            "@product/*": ["apps/product/*"],
+            "@product/components/*": ["apps/product/src/components/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

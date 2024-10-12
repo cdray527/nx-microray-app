@@ -6,7 +6,9 @@ const { join } = require('path');
 module.exports = {
     darkMode: ['class', '[data-mode="dark"]'],
     content: [
-        join(__dirname, '{src,pages,components,app}/**/*!(*.spec).{ts,tsx,html}'),
+        // join(__dirname, '{src,pages,components,app}/**/*!(*.spec).{ts,tsx,html}'),
+        join(__dirname, '../../apps/**/*.{ts,tsx,html}'),
+        join(__dirname, '../../libs/**/*.{ts,tsx,html}'),
         ...createGlobPatternsForDependencies(__dirname)
     ],
     theme: {
