@@ -1,4 +1,6 @@
 import React from 'react';
+import cn from 'classnames';
+import styles from './ProductCard.module.scss';
 
 interface ProductCardProps {
     id: string;
@@ -22,15 +24,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     onClick
 }) => {
     return (
-        <div className="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-                <button onClick={onClick} className="block w-full">
+        <div className="max-w-80 rounded-lg hover:shadow-blue-500 dark:hover:shadow-teal-500 hover:shadow-hovered">
+            <a href={link} target="_blank" onClick={onClick} rel="noopener noreferrer">
+                <div className="block w-full text-left overflow-hidden relative">
+                    <div
+                        className={cn(
+                            'absolute inset-0 bg-cover bg-center hidden dark:block',
+                            `${styles['dm-img-thumbnailshadow']}`
+                        )}
+                        style={{
+                            backgroundImage: `url(${thumbnail})`
+                        }}
+                    />
                     <img
                         className="rounded-t-lg object-cover w-full h-64"
                         src={thumbnail}
                         alt={description}
                     />
-                </button>
+                </div>
             </a>
             <div className="p-5">
                 <div className="flex justify-between items-center mb-2">

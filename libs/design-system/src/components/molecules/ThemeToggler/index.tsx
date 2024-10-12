@@ -1,12 +1,18 @@
 'use client';
 import * as Toggle from '@radix-ui/react-toggle';
 import { Iconify } from '@design-system/components/atoms';
+import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 export function ThemeToggler() {
     const { theme, setTheme } = useTheme();
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const isDarkMode = theme === 'dark';
+    useEffect(() => {
+        const currentTheme = theme;
+        setIsDarkMode(currentTheme === 'dark');
+    }, [theme]);
+
     return (
         <Toggle.Root
             pressed={isDarkMode}

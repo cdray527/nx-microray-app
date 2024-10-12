@@ -4,7 +4,7 @@ const { join } = require('path');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ['class', '[data-mode="dark"]'],
+    darkMode: ['selector', '[data-theme="dark"]'],
     content: [
         // join(__dirname, '{src,pages,components,app}/**/*!(*.spec).{ts,tsx,html}'),
         join(__dirname, '../../apps/**/*.{ts,tsx,html}'),
@@ -58,6 +58,9 @@ module.exports = {
                 lg: '992px',
                 xl: '1200px',
                 '2xl': '1400px'
+            },
+            boxShadow: {
+                hovered: '0px 0px 4px 1px'
             }
         }
     },
