@@ -52,10 +52,18 @@ To start the project in development mode you can just run:
 npx nx serve store
 ```
 
-This will start the `store` application, also you can run all apps by using:
+This will start the `host` application, also you can run all apps by using:
+
+development:
 
 ```bash
 npx nx run-many --target=serve --all
+```
+
+production:
+
+```bash
+nx run-many --target=serve --configuration=production --all
 ```
 
 ## Creating new apps

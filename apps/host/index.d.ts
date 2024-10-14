@@ -12,6 +12,13 @@ declare module 'store/store-list' {
 }
 
 declare module 'product/featured-product-list' {
-    export * from '@product/components/featured-product-list/featured-product-list';
-    export { default } from '@product/components/featured-product-list/featured-product-list';
+    import { FC } from 'react';
+    import { FeaturedProductListProps } from '@product/components/featured-product-list/featured-product-list';
+
+    export interface FeaturedProductListPropsWithCount extends FeaturedProductListProps {
+        count: number;
+    }
+
+    export const FeaturedProductList: FC<FeaturedProductListPropsWithCount>;
+    export default FeaturedProductList;
 }
