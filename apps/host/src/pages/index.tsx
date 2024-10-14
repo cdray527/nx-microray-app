@@ -14,7 +14,7 @@ export default function Home() {
             </Head>
             <MainLayout>
                 <div className="flex justify-center flex-col mx-auto max-w-fit">
-                    <FeaturedProductList />
+                    <FeaturedProductList count={10} />
                 </div>
             </MainLayout>
         </div>
