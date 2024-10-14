@@ -1,7 +1,7 @@
 {
-    "name": "hooks",
+    "name": "utils",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "libs/hooks/src",
+    "sourceRoot": "libs/utils/src",
     "projectType": "library",
     "tags": [],
     "targets": {

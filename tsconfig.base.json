@@ -20,11 +20,11 @@
             "@design-system/components/*": ["libs/design-system/src/components/*"],
             "@design-system/stories/*": ["libs/design-system/src/stories/*"],
             "@design-system/styles/*": ["libs/design-system/src/styles/*"],
-            "@hooks": ["libs/hooks/src/index.ts"],
-            "@store/*": ["apps/store/*"],
-            "@store/components/*": ["apps/store/src/components/*"],
+            "@utils/*": ["libs/utils/src/*"],
             "@product/*": ["apps/product/*"],
-            "@product/components/*": ["apps/product/src/components/*"]
+            "@product/components/*": ["apps/product/src/components/*"],
+            "@store/*": ["apps/store/*"],
+            "@store/components/*": ["apps/store/src/components/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

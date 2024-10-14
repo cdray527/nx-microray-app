@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './ProductCard.module.scss';
+import { Product } from '@utils/types';
 
 interface ProductCardProps {
     id: string;
@@ -9,8 +10,8 @@ interface ProductCardProps {
     price: number;
     brand: string;
     gender: string;
-    link: string;
-    onClick?: () => void;
+    // link: string;
+    // onClick?: () => void;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -19,13 +20,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     thumbnail,
     price,
     brand,
-    gender,
-    link,
-    onClick
+    gender
+    // link,
+    // onClick
 }) => {
     return (
         <div className="max-w-80 rounded-lg hover:shadow-blue-500 dark:hover:shadow-teal-500 hover:shadow-hovered">
-            <a href={link} target="_blank" onClick={onClick} rel="noopener noreferrer">
+            <a
+                href={'/'}
+                // href={link}
+                target="_blank"
+                // onClick={onClick}
+                rel="noopener noreferrer"
+            >
                 <div className="block w-full text-left overflow-hidden relative">
                     <div
                         className={cn(

@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { ThemeProvider } from '@hooks';
+import { ThemeProvider } from '@utils/provider';
 import '@design-system/styles/global.scss';
 
 function HostApp({ Component, pageProps }: AppProps) {
