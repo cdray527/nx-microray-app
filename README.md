@@ -54,15 +54,16 @@ npx nx serve store
 
 This will start the `host` application, also you can run all apps by using:
 
-development:
+serve development:
 
 ```bash
 npx nx run-many --target=serve --all
 ```
 
-production:
+serve production:
 
 ```bash
+npx nx run-many -t build
 nx run-many --target=serve --configuration=production --all
 ```
 
@@ -120,3 +121,8 @@ nx storybook design-system
 6. Check nx.json , if number of apps is exceeding "parallel" setting
 7. Add .env
 8. Update next.config.js
+
+## Exclude Folder from build
+
+\_Only Update tsconfig.json in your app directory
+e.g: `exclude: ["src/pages/dev/*"]`

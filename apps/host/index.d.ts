@@ -15,10 +15,6 @@ declare module 'product/featured-product-list' {
     import { FC } from 'react';
     import { FeaturedProductListProps } from '@product/components/featured-product-list/featured-product-list';
 
-    export interface FeaturedProductListPropsWithCount extends FeaturedProductListProps {
-        count: number;
-    }
-
-    export const FeaturedProductList: FC<FeaturedProductListPropsWithCount>;
+    export const FeaturedProductList: FC<FeaturedProductListProps>;
     export default FeaturedProductList;
 }

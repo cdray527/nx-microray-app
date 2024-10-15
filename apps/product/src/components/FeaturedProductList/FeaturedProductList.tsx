@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { ProductCard } from '@design-system/components/molecules';
-import { getFeaturedProducts } from '../../queries/getFeaturedProducts';
+import { getFeaturedProducts } from '@utils/queries/getFeaturedProducts';
 import { Product } from '@utils/types';
 
 interface FeaturedProductListProps {
+    dataProducts: Product[];
     count: number;
 }
 
-const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ count }) => {
-    const [products, setProducts] = useState<Product[]>([]);
+const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts, count }) => {
+    const [products, setProducts] = useState<Product[]>(dataProducts);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        setProducts(dataProducts);
+
         const fetchProducts = async () => {
             try {
                 const data = await getFeaturedProducts(count);
@@ -24,9 +27,10 @@ const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ count }) => {
                 setLoading(false);
             }
         };
-
-        fetchProducts();
-    }, [count]);
+        if (dataProducts?.length !== count) {
+            fetchProducts();
+        }
+    }, [dataProducts, count]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
