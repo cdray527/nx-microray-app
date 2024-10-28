@@ -20,10 +20,10 @@ ENV NX_DAEMON=false
 ENV NEXT_PRIVATE_LOCAL_WEBPACK=true
 
 # Build the application
-RUN nx run host:build
-RUN nx run store:build
-RUN nx run product:build
-RUN nx run checkout:build
+RUN nx run host:build:production --skip-nx-cache
+RUN nx run store:build:production --skip-nx-cache
+RUN nx run product:build:production --skip-nx-cache
+RUN nx run checkout:build:production --skip-nx-cache
 
 # Create a new stage for the runtime image
 FROM node:22-bullseye-slim AS runtime
