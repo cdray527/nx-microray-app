@@ -1,0 +1,48 @@
+# Use a specific version of the official Node.js image based on the slim variant
+FROM node:22-bullseye-slim AS build
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy required files for installing dependencies
+COPY package.json package-lock.json nx.json tsconfig.base.json ./
+COPY libs/ ./libs/
+COPY apps/ ./apps/
+
+# Install npm dependencies
+RUN npm install
+
+# Install nx globally
+RUN npm install -g nx
+
+# Set NX_DAEMON environment variable to false to prevent nx from running in daemon mode
+ENV NX_DAEMON=false
+ENV NEXT_PRIVATE_LOCAL_WEBPACK=true
+
+# Build the application
+RUN nx run host:build
+RUN nx run store:build
+RUN nx run product:build
+RUN nx run checkout:build
+
+# Create a new stage for the runtime image
+FROM node:22-bullseye-slim AS runtime
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the node_modules from the build stage
+COPY --from=build /usr/src/app/node_modules ./node_modules
+COPY --from=build /usr/src/app/package.json ./package.json
+
+# Copy build artifacts from the build stage
+COPY --from=build /usr/src/app/dist/apps/host /usr/src/app/dist/apps/host
+COPY --from=build /usr/src/app/dist/apps/store /usr/src/app/dist/apps/store
+COPY --from=build /usr/src/app/dist/apps/product /usr/src/app/dist/apps/product
+COPY --from=build /usr/src/app/dist/apps/checkout /usr/src/app/dist/apps/checkout
+
+# Expose ports
+EXPOSE 4000
+EXPOSE 4100
+EXPOSE 4200
+EXPOSE 4300
