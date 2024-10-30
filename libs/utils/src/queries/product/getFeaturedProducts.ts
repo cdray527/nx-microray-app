@@ -1,7 +1,7 @@
 // lib/queries/getFeaturedProducts.ts
 import { gql } from '@apollo/client';
-import createApolloClient from '../tools/apollo';
-import { Product } from '../types/Product';
+import createApolloClient from '../../tools/apollo';
+import { Product } from '../../types/Product';
 
 const client = createApolloClient();
 

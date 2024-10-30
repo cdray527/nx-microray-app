@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ProductCard } from '@design-system/components/molecules';
-import { getFeaturedProducts } from '@utils/queries/getFeaturedProducts';
-import { Product } from '@utils/types';
+import { getFeaturedProducts } from '@utils/queries/product/getFeaturedProducts';
+import { Product } from '@utils/types/Product';
 
 interface FeaturedProductListProps {
     dataProducts: Product[];

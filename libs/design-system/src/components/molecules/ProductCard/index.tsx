@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './ProductCard.module.scss';
-import { Product } from '@utils/types';
+import { Product } from '@utils/types/Product';
 
 interface ProductCardProps {
     id: string;
