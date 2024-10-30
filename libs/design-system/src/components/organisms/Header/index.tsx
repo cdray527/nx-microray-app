@@ -1,35 +1,26 @@
 'use client';
 
-import { lazy, Suspense } from 'react';
-// components
-import { HeaderNav } from './HeaderNav';
-// import { NavMobile } from './nav/nav-mobile';
-// import { UserMenu } from './common/user-menu';
-// skeletons
-// import { ButtonSkeleton, IconButtonSkeleton } from '@repo/ui/components/skeletons/button-skeleton';
-
-// const CartMenu = lazy(() => import('checkout/cart-menu'));
-// const ProductSearch = lazy(() => import('product/search'));
-
-// ----------------------------------------------------------------------
+import { ThemeToggler, SearchBar } from '@design-system/components/molecules';
+import { Button, Iconify } from '@design-system/components/atoms';
 
 export function Header() {
     return (
         <header className="sticky top-0 z-40 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/70">
-            <div className="container flex h-16 items-center">
-                <HeaderNav />
-                {/* <NavMain />
-                <NavMobile /> */}
-                <div className="flex flex-1 items-center space-x-4 md:justify-end">
-                    {/* <Suspense fallback={<ButtonSkeleton className="sm:pr-12 lg:w-80" />}>
-                        <ProductSearch />
-                    </Suspense>
-                    <div className="flex space-x-1">
-                        <UserMenu />
-                        <Suspense fallback={<IconButtonSkeleton />}>
-                            <CartMenu />
-                        </Suspense>
-                    </div> */}
+            <div className="container flex h-16 items-stretch">
+                <div className="m-8 hidden md:flex w-full items-stretch">
+                    <nav className="flex flex-1 items-center space-x-6 text-sm font-medium ml-1">
+                        <Button variant="default" size="default" asChild>
+                            <a href="/">
+                                <Iconify icon="mdi:home" className="mr-2" />
+                                NX-Microray
+                            </a>
+                        </Button>
+                        <ThemeToggler />
+                    </nav>
+                    <div className="flex flex-1 items-center md:justify-end">
+                        <SearchBar onSearch={(query) => console.log(query)} />
+                    </div>
+                    <div className="flex flex-1 items-center md:justify-end">Cart</div>
                 </div>
             </div>
         </header>
