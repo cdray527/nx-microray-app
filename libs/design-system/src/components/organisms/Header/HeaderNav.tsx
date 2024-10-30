@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ThemeToggler } from '@design-system/components/molecules';
+import { Button, Iconify } from '@design-system/components/atoms';
 
 // routes
 // import { paths } from "@repo/utils/routes/paths";
@@ -13,20 +14,12 @@ export function HeaderNav() {
         <div className="mr-16 hidden md:flex">
             <div className="mr-12">{/* <Logo /> */}</div>
             <nav className="flex items-center space-x-6 text-sm font-medium ml-1">
-                <Link
-                    // href={paths.docs.root}
-                    href=""
-                    className="transition-colors text-primary hover:text-foreground/80"
-                >
-                    Docs
-                </Link>
-                <Link
-                    // href={paths.product.root}
-                    href=""
-                    className="transition-colors text-primary hover:text-foreground/80"
-                >
-                    Demo
-                </Link>
+                <Button variant="default" size="default" asChild>
+                    <a href="/">
+                        <Iconify icon="mdi:home" className="mr-2" />
+                        NX-Microray
+                    </a>
+                </Button>
                 <ThemeToggler />
             </nav>
         </div>

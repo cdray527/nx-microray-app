@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { Iconify } from '@design-system/components/atoms';
+
 import cn from 'classnames';
 
 const buttonVariants = cva(
@@ -9,9 +9,9 @@ const buttonVariants = cva(
     {
         variants: {
             variant: {
-                default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
+                default: 'bg-primary text-primary-foreground shadow hover:opacity-90',
                 destructive:
-                    'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
+                    'bg-destructive text-destructive-foreground shadow-sm hover:opacity-90',
                 outline:
                     'border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground',
                 secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
@@ -32,52 +32,21 @@ const buttonVariants = cva(
     }
 );
 
-const renderIcon = (icon: string | undefined, iconUrl: string | undefined) => {
-    if (icon) {
-        // If icon is from Iconify
-        return <Iconify icon={icon} className="inline-block" width={20} />;
-    } else if (iconUrl) {
-        // If icon is a URL
-        return <img src={iconUrl} alt="icon" className="inline-block w-5 h-5" />;
-    }
-    return null;
-};
-
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
         VariantProps<typeof buttonVariants> {
     asChild?: boolean;
-    label?: string;
-    icon?: string; // Add icon prop
-    iconUrl?: string;
-    iconPosition?: 'left' | 'right'; // Add iconPosition prop
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-        {
-            className,
-            variant,
-            size,
-            asChild = false,
-            label,
-            icon,
-            iconUrl,
-            iconPosition = 'left',
-            children,
-            ...props
-        },
-        ref
-    ) => {
-        const Comp = asChild ? Slot : 'button';
-
+    ({ className, variant, size, asChild = false, ...props }, ref) => {
+        const ButtonEl = asChild ? Slot : 'button';
         return (
-            <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
-                {(icon || iconUrl) && iconPosition === 'left' && renderIcon(icon, iconUrl)}
-                {label && <span>{label}</span>} {/* Render the label if provided */}
-                {children}
-                {(icon || iconUrl) && iconPosition === 'right' && renderIcon(icon, iconUrl)}
-            </Comp>
+            <ButtonEl
+                className={cn(buttonVariants({ variant, size, className }))}
+                ref={ref}
+                {...props}
+            />
         );
     }
 );
