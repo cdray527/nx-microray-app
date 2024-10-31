@@ -6,7 +6,7 @@ const meta: Meta<typeof SearchBar> = {
     title: 'Components/Molecules/SearchBar',
     component: SearchBar,
     argTypes: {
-        onClickSearchButton: { action: 'searched' },
+        onSearch: { action: 'searched' },
         placeholder: {
             control: { type: 'text' },
             defaultValue: 'Search something'
@@ -23,14 +23,14 @@ type Story = StoryObj<typeof SearchBar>;
 
 // Default SearchBar
 export const Default: Story = {
-    render: () => <SearchBar onClickSearchButton={(query) => console.log(query)} />
+    render: () => <SearchBar onSearch={(query) => console.log(query)} />
 };
 
 // SearchBar with Initial Query
 export const WithInitialQuery: Story = {
     render: () => (
         <SearchBar
-            onClickSearchButton={(query) => console.log(query)}
+            onSearch={(query) => console.log(query)}
             defaultQuery="Something I searched b4"
         />
     )
