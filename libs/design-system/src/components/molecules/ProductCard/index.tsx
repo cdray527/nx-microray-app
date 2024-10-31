@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import styles from './ProductCard.module.scss';
 import { Product } from '@utils/types/Product';
+import AddToCartButton from './AddToCartButton';
 
 interface ProductCardProps {
     id: string;
@@ -10,8 +11,8 @@ interface ProductCardProps {
     price: number;
     brand: string;
     gender: string;
-    // link: string;
-    // onClick?: () => void;
+    sku: string;
+    category: string;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -20,19 +21,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     thumbnail,
     price,
     brand,
-    gender
-    // link,
-    // onClick
+    gender,
+    sku,
+    category
 }) => {
+    const product: Product = {
+        id,
+        sku,
+        brand,
+        name: description,
+        gender,
+        category,
+        retailPrice: price,
+        image: {
+            original: thumbnail,
+            small: thumbnail,
+            thumbnail
+        }
+    };
+
     return (
         <div className="max-w-80 rounded-lg hover:shadow-blue-500 dark:hover:shadow-teal-500 hover:shadow-hovered">
-            <a
-                href={'/'}
-                // href={link}
-                target="_blank"
-                // onClick={onClick}
-                rel="noopener noreferrer"
-            >
+            <a href={'/'} target="_blank" rel="noopener noreferrer">
                 <div className="block w-full text-left overflow-hidden relative">
                     <div
                         className={cn(
@@ -60,6 +70,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {description}
                 </h5>
+                <AddToCartButton product={product} />
             </div>
         </div>
     );

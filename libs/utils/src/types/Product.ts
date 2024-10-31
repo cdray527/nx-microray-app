@@ -4,17 +4,17 @@ export interface Product {
     brand: string;
     name: string;
     colorway?: string;
-    gender: string;
-    category: string;
-    releaseYear: string;
-    releaseDate: string;
-    retailPrice: number;
+    gender?: string;
+    category?: string;
+    releaseYear?: string;
+    releaseDate?: string;
+    retailPrice?: number;
     estimatedMarketValue?: number;
     story?: string;
-    image: {
-        original: string;
-        small: string;
-        thumbnail: string;
+    image?: {
+        original?: string;
+        small?: string;
+        thumbnail?: string;
     };
     links?: any;
 }

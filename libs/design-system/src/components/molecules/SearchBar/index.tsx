@@ -36,7 +36,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={placeholder}
-                className="flex-grow outline-none"
+                className="flex-grow bg-transparent outline-none"
             />
             <button type="submit" className="ml-2">
                 <Iconify icon={icon} width={20} height={20} />
