@@ -15,16 +15,17 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@checkout/*": ["apps/checkout/*"],
             "@design-system/*": ["libs/design-system/*"],
             "@design-system/components/*": ["libs/design-system/src/components/*"],
             "@design-system/stories/*": ["libs/design-system/src/stories/*"],
             "@design-system/styles/*": ["libs/design-system/src/styles/*"],
-            "@utils/*": ["libs/utils/src/*"],
             "@product/*": ["apps/product/*"],
             "@product/components/*": ["apps/product/src/components/*"],
             "@store/*": ["apps/store/*"],
-            "@store/components/*": ["apps/store/src/components/*"]
+            "@store/components/*": ["apps/store/src/components/*"],
+            "@checkout/*": ["apps/checkout/*"],
+            "@checkout/components/*": ["apps/checkout/src/components/*"],
+            "@utils/*": ["libs/utils/src/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

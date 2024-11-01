@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
 import styles from './ProductCard.module.scss';
 import { Product } from '@utils/types/Product';
@@ -25,6 +25,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     sku,
     category
 }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     const product: Product = {
         id,
         sku,
@@ -41,8 +43,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     };
 
     return (
-        <div className="max-w-80 rounded-lg hover:shadow-blue-500 dark:hover:shadow-teal-500 hover:shadow-hovered">
-            <a href={'/'} target="_blank" rel="noopener noreferrer">
+        <div
+            className="flex flex-col max-w-80 rounded-lg hover:shadow-blue-500 dark:hover:shadow-teal-500 hover:shadow-hovered"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <a
+                href={'/'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left relative"
+            >
                 <div className="block w-full text-left overflow-hidden relative">
                     <div
                         className={cn(
@@ -60,17 +71,27 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     />
                 </div>
             </a>
-            <div className="p-5">
-                <div className="flex justify-between items-center mb-2">
-                    <p className="text-gray-700 dark:text-gray-400">
-                        {brand} | {gender}
-                    </p>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-white">${price}</p>
+            <div className="flex flex-col justify-between flex-grow p-5">
+                <div>
+                    <div className="flex justify-between items-center mb-2">
+                        <p className="text-gray-700 dark:text-gray-400">
+                            {brand} | {gender}
+                        </p>
+                        <p className="ml-2 text-lg font-semibold text-gray-900 dark:text-white">
+                            ${price}
+                        </p>
+                    </div>
+                    <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {description}
+                    </h5>
                 </div>
-                <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    {description}
-                </h5>
-                <AddToCartButton product={product} />
+                <div
+                    className={cn('visible', {
+                        'md:invisible': !isHovered
+                    })}
+                >
+                    <AddToCartButton product={product} />
+                </div>
             </div>
         </div>
     );

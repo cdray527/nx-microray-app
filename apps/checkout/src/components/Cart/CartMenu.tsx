@@ -1,21 +1,26 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
-import { CartItem } from './CartItem'; // Ensure this points to your CartItem component file
+import { CartItem } from './CartItem';
+import { getCartItems } from '@utils/func/cart';
 
 const CartMenu = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        // Read cart items from cookies
-        const existingCart = Cookies.get('cartItems');
+        const existingCart = getCartItems();
         if (existingCart) {
-            setItems(JSON.parse(existingCart));
+            setItems(existingCart);
         }
     }, []);
 
+    // useEffect(() => {
+    //     console.log('Current Cart Items', items);
+    // }, [items]);
+
     return (
         <div className="cart-menu">
-            <h2 className="text-lg font-semibold">Your Cart</h2>
+            <h2 className="text-lg font-semibold">My Cart</h2>
             {items.length === 0 ? (
                 <p>Your cart is empty.</p>
             ) : (

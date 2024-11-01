@@ -1,16 +1,7 @@
-import React from 'react';
+'use client';
 
-interface CartItemProps {
-    item: {
-        id: string;
-        name: string;
-        retailPrice: number;
-        dateAdded: string; // Expecting date in ISO format
-        image: {
-            thumbnail: string;
-        };
-    };
-}
+import React from 'react';
+import { CartItem as CartItemProps } from '@utils/types/Cart';
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
     return (

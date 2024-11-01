@@ -40,17 +40,18 @@ const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts,
 
     return (
         products && (
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                 {products.map((product) => (
                     <ProductCard
                         key={product.id}
                         id={product.id}
                         description={product.name}
-                        thumbnail={product.image.thumbnail}
-                        price={product.retailPrice}
+                        thumbnail={product.image?.thumbnail || ''}
+                        price={product.retailPrice || 0}
                         brand={product.brand}
-                        gender={product.gender}
-                        // link={product.links.goat}
+                        gender={product.gender || ''}
+                        sku={product.sku || ''}
+                        category={product.category || ''} // link={product.links.goat}
                         // onClick={() => window.open(product.links.goat, '_blank')}
                     />
                 ))}

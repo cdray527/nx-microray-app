@@ -109,18 +109,17 @@ nx storybook design-system
 
 ## Setup new App steps
 
-1. npx nx g @nx/next:app app-name
+1. npx nx g @nx/next:app `app-name`
 2. Update next.config.js
 3. Update port number in project.json
-4. nx g @nx/react:setup-tailwind --project=<your app here>
+4. nx g @nx/react:setup-tailwind --project=`your app here`
 5. Update tailwind config
    /\*_ @type {import('tailwindcss').Config} _/
    module.exports = {
    presets: [require('../../libs/design-system/tailwind.config.js')]
    };
 6. Check nx.json , if number of apps is exceeding "parallel" setting
-7. Add .env
-8. Update next.config.js
+7. Update next.config.js
 
 ## Exclude Folder from build
 

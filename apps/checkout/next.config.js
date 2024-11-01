@@ -5,6 +5,14 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: '../.env' });
 
+// this enables you to use import() and the webpack parser
+// loading remotes on demand, not ideal for SSR
+const remotes = (isServer) => {
+    const location = isServer ? 'ssr' : 'chunks';
+
+    return {};
+};
+
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
@@ -19,19 +27,16 @@ const nextConfig = {
      * @param {import('webpack').Configuration} config
      * @returns {import('webpack').Configuration}
      */
-    webpack(config) {
+    webpack(config, { isServer }) {
         config.plugins.push(
             new NextFederationPlugin({
                 name: 'checkout',
                 filename: 'static/chunks/remoteEntry.js',
-                remotes: {},
+                // remotes: remotes(isServer),
                 extraOptions: {
                     automaticAsyncBoundary: true
                 },
-                exposes: {
-                    './buy-button': './components/buy-button/buy-button.tsx',
-                    './useAddToCartHook': './hooks/useAddToCart.ts'
-                },
+                exposes: {},
                 shared: {}
             })
         );
