@@ -1,7 +1,11 @@
 'use client';
 
 import React from 'react';
-import { CartItem as CartItemProps } from '@utils/types/Cart';
+import { ICartItem } from '@utils/types/Cart';
+
+interface CartItemProps {
+    item: ICartItem;
+}
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
     return (

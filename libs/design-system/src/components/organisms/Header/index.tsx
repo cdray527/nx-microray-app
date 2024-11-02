@@ -2,6 +2,7 @@
 
 import { ThemeToggler, SearchBar } from '@design-system/components/molecules';
 import { Button, Iconify } from '@design-system/components/atoms';
+import { Cart } from '@checkout/components/Cart';
 
 export function Header() {
     return (
@@ -20,7 +21,9 @@ export function Header() {
                     <div className="hidden md:flex flex-1 items-center md:justify-end">
                         <SearchBar onSearch={(query) => console.log(query)} />
                     </div>
-                    <div className="hidden md:flex flex-1 items-center md:justify-end">Cart</div>
+                    <div className="hidden md:flex flex-1 items-center md:justify-end">
+                        <Cart />
+                    </div>
                 </div>
             </div>
         </header>
