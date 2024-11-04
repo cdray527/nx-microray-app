@@ -1,7 +1,7 @@
 import React from 'react';
 import { addToCart } from '@utils/func/cart/addToCart';
 import { Product } from '@utils/types/Product';
-import { CartItem } from '@utils/types/Cart';
+import { ICartItem } from '@utils/types/Cart';
 import { Button, Iconify } from '@design-system/components/atoms';
 
 interface AddToCartButtonProps {
@@ -10,7 +10,7 @@ interface AddToCartButtonProps {
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
     const handleAddToCart = (product: Product) => {
-        const cartItem: CartItem = {
+        const cartItem: ICartItem = {
             id: product.id,
             name: product.name,
             retailPrice: product.retailPrice || 0,

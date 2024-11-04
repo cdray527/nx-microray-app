@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { CartItem } from './CartItem';
+import { ICartItem } from '@utils/types/Cart';
 import cn from 'classnames';
 import styles from './Cart.module.scss';
 
@@ -44,17 +45,19 @@ const CartMenu = () => {
 
     return (
         <div className={cn(styles['cart-menu-container'], 'z-50  items-center justify-center')}>
-            <h2 className="text-lg font-semibold">My Cart</h2>
-            {cartItems.length === 0 ? (
-                <p>Your cart is empty.</p>
-            ) : (
-                <ul>
-                    {cartItems.map((item) => {
-                        console.log(item);
-                        return <CartItem key={item.id} item={item} />;
-                    })}
-                </ul>
-            )}
+            <div className={cn(styles['cart-menu-header'])}>My Cart</div>
+            <div className={cn(styles['cart-menu-body'])}>
+                {cartItems.length === 0 ? (
+                    <p>Your cart is empty.</p>
+                ) : (
+                    <ul>
+                        {cartItems.map((item: ICartItem) => {
+                            console.log(item);
+                            return <CartItem key={item.id} item={item} />;
+                        })}
+                    </ul>
+                )}
+            </div>
         </div>
     );
 };
