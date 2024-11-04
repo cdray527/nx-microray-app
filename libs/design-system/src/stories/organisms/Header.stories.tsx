@@ -12,3 +12,13 @@ type Story = StoryObj<typeof Header>;
 export const Default: Story = {
     render: () => <Header />
 };
+
+export const CartButtonEventHandling: Story = {
+    render: () => (
+        <Header
+            onClickCartButton={() => {
+                console.log('Cart button clicked');
+            }}
+        />
+    )
+};

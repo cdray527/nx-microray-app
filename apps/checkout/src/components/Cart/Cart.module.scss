@@ -1,0 +1,16 @@
+.cart-main-container {
+    position: relative;
+}
+
+.cart-menu-container {
+    position: fixed;
+    right: 50px;
+    background-color: var(--popover-background);
+    color: var(--popover-foreground);
+
+    max-height: 500px;
+    overflow: auto;
+}
+
+.cart-items-container {
+}

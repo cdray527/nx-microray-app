@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { CartItem } from './CartItem';
+import cn from 'classnames';
+import styles from './Cart.module.scss';
 
 const CartMenu = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -41,7 +43,7 @@ const CartMenu = () => {
     }, []);
 
     return (
-        <div className="cart-menu">
+        <div className={cn(styles['cart-menu-container'], 'z-50  items-center justify-center')}>
             <h2 className="text-lg font-semibold">My Cart</h2>
             {cartItems.length === 0 ? (
                 <p>Your cart is empty.</p>

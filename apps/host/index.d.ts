@@ -18,3 +18,7 @@ declare module 'product/featured-product-list' {
     export const FeaturedProductList: FC<FeaturedProductListProps>;
     export default FeaturedProductList;
 }
+
+declare module 'checkout/cart-module' {
+    export { default } from '@checkout/components/Cart';
+}

@@ -36,7 +36,9 @@ const nextConfig = {
                 extraOptions: {
                     automaticAsyncBoundary: true
                 },
-                exposes: {},
+                exposes: {
+                    './cart-module': './src/components/Cart/index.tsx'
+                },
                 shared: {}
             })
         );
