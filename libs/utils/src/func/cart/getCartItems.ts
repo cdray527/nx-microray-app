@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
-import { CartItem } from '../../types/Cart';
+import { ICartItem } from '../../types/Cart';
 
-export const getCartItems = (): CartItem[] => {
+export const getCartItems = (): ICartItem[] => {
     const cart = Cookies.get('cart');
     return cart ? JSON.parse(cart) : []; // Return an empty array if no cart exists
 };
