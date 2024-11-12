@@ -2,8 +2,6 @@
 
 import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'next-themes';
 
-// ----------------------------------------------------------------------
-
 type Props = {
     children: React.ReactNode;
 };

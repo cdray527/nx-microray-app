@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ProductCard } from '@design-system/components/molecules';
+import { ProductCard, Carousel } from '@design-system/components/molecules';
 import { getFeaturedProducts } from '@utils/queries/product/getFeaturedProducts';
 import { Product } from '@utils/types/Product';
 
@@ -40,21 +40,25 @@ const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts,
 
     return (
         products && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-                {products.map((product) => (
-                    <ProductCard
-                        key={product.id}
-                        id={product.id}
-                        description={product.name}
-                        thumbnail={product.image?.thumbnail || ''}
-                        price={product.retailPrice || 0}
-                        brand={product.brand}
-                        gender={product.gender || ''}
-                        sku={product.sku || ''}
-                        category={product.category || ''} // link={product.links.goat}
-                        // onClick={() => window.open(product.links.goat, '_blank')}
-                    />
-                ))}
+            // <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4"> // Masonry
+            <div className="flex">
+                <Carousel
+                    items={products}
+                    renderItem={(product) => (
+                        <ProductCard
+                            key={product.id}
+                            id={product.id}
+                            description={product.name}
+                            thumbnail={product.image?.thumbnail || ''}
+                            price={product.retailPrice || 0}
+                            brand={product.brand}
+                            gender={product.gender || ''}
+                            sku={product.sku || ''}
+                            category={product.category || ''} // link={product.links.goat}
+                            // onClick={() => window.open(product.links.goat, '_blank')}
+                        />
+                    )}
+                />
             </div>
         )
     );

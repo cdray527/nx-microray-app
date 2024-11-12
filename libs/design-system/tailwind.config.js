@@ -61,6 +61,15 @@ module.exports = {
             },
             boxShadow: {
                 hovered: '0px 0px 4px 1px'
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' }
+                }
+            },
+            animation: {
+                carousel: 'marquee 60s linear infinite'
             }
         }
     },
