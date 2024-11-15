@@ -1,24 +1,14 @@
-import { useEffect, useState } from 'react';
-import { ProductCard } from '@design-system/components/molecules';
-
 export function Carousel({
-    items, // Items in array
-    renderItem // Rendering Component
+    items,
+    renderItem
 }: {
-    items: any[]; // Array of product data
-    renderItem: (item: any) => React.ReactNode; // Function to render a product (like ProductCard)
+    items: any[];
+    renderItem: (item: any) => React.ReactNode;
 }) {
-    const [carouselProducts, setCarouselProducts] = useState<any[]>([]);
+    if (!items?.length) return null;
 
-    useEffect(() => {
-        if (items) {
-            // Fetch products and duplicate for the carousel loop
-            const fetchedProducts = [...items, ...items, ...items]; // Adjust this as needed
-            setCarouselProducts(fetchedProducts);
-        }
-    }, [items]); // Update the carousel when items change
-
-    if (carouselProducts.length === 0) return null;
+    // Purposefully duplicating products to make the carousel loop and not run out of products on wide screens.
+    const carouselProducts = [...items, ...items, ...items];
 
     return (
         <div className="w-full overflow-x-auto pb-6 pt-1">
