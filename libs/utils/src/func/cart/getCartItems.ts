@@ -1,7 +1,6 @@
-import Cookies from 'js-cookie';
-import { ICartItem } from '../../types/Cart';
+import { CART_KEY } from '../../constants/cart';
 
-export const getCartItems = (): ICartItem[] => {
-    const cart = Cookies.get('cart');
-    return cart ? JSON.parse(cart) : []; // Return an empty array if no cart exists
+export const getCartItems = () => {
+    const items = localStorage.getItem(CART_KEY);
+    return items ? JSON.parse(items) : [];
 };
