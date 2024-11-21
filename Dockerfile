@@ -12,5 +12,3 @@ EXPOSE 4000
 EXPOSE 4100
 EXPOSE 4200
 EXPOSE 4300
-
-CMD ["nx", "run-many", "--target=serve", "--all"]

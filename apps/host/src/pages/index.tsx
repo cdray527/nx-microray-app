@@ -1,14 +1,10 @@
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
 import { GetServerSideProps } from 'next';
 import { getFeaturedProducts } from '@utils/queries/product/getFeaturedProducts';
 import { Products } from '@utils/types/Product';
 
 // SSR
 import FeaturedProductList from 'product/featured-product-list';
-
-// CSR
-const Cart = dynamic(() => import('checkout/cart-module'));
 
 export default function Home({ products }: Products) {
     return (

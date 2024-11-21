@@ -1,13 +1,12 @@
+// lib/apolloClient.ts
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
-const createApolloClient = () => {
-    const httpLink = new HttpLink({
-        uri: `${process.env.NEXT_PUBLIC_GRAPHQL_SERVER_URL}/query` // Update with your GraphQL server URI
-    });
+const createApolloClient = (url: string) => {
+    const httpLink = new HttpLink({ uri: url });
 
     return new ApolloClient({
         link: httpLink,
-        cache: new InMemoryCache() // Cache implementation
+        cache: new InMemoryCache()
     });
 };
 

@@ -2,24 +2,23 @@
 
 import React, { useEffect, useState } from 'react';
 import { CartItem } from './CartItem';
-import { v4 as uuidv4 } from 'uuid';
 import { ICartItem } from '@utils/types/Cart';
 import { getCartItems } from '@utils/func/cart';
 import { CART_KEY, CART_ID_COOKIE } from '@utils/constants/cart';
 import cn from 'classnames';
+import Cookies from 'js-cookie';
 import styles from './Cart.module.scss';
+import { v4 as uuidv4 } from 'uuid';
 
-// Generate New Cart Id cookies if not exists, else reuse existing cart id
-const checkCartId = async () => {
-    const cartCookie = await window.cookieStore.get(CART_ID_COOKIE);
-    if (!cartCookie) {
-        const uniqueCartId = uuidv4();
-        document.cookie = `${CART_ID_COOKIE}=${uniqueCartId}; path=/; secure; samesite=strict`;
-        return uniqueCartId;
+const checkCartId = (): string => {
+    let cartId = Cookies.get(CART_ID_COOKIE);
+    if (!cartId) {
+        // Generate a new cart ID if it doesn't exist
+        cartId = uuidv4();
+        Cookies.set('cart_id', cartId, { expires: 7 }); // Set with a 7-day expiration
     }
-    return cartCookie.value;
+    return cartId;
 };
-
 const CartMenu = () => {
     const [cartItems, setCartItems] = useState<ICartItem[]>([]);
 

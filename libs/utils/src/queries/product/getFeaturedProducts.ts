@@ -3,7 +3,8 @@ import { gql } from '@apollo/client';
 import createApolloClient from '../../tools/apollo';
 import { Product } from '../../types/Product';
 
-const client = createApolloClient();
+const url = `${process.env.NEXT_PUBLIC_PRODUCT_API_URL}/query`;
+const client = createApolloClient(url);
 
 export const getFeaturedProducts = async (count: number): Promise<Product[]> => {
     const query = gql`
