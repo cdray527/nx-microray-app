@@ -45,7 +45,9 @@ const nextConfig = {
                     './featured-product-list':
                         './src/components/FeaturedProductList/FeaturedProductList.tsx'
                 },
-                shared: {}
+                shared: {
+                    recoil: { singleton: true, requiredVersion: false }
+                }
             })
         );
 

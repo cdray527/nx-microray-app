@@ -1,26 +1,15 @@
 import React from 'react';
-import { addToCart } from '@utils/func/cart/addToCart';
 import { Product } from '@utils/types/Product';
-import { ICartItem } from '@utils/types/Cart';
 import { Button, Iconify } from '@design-system/components/atoms';
 
 interface AddToCartButtonProps {
+    onClickAddToCartButton: () => void;
     product: Product;
 }
 
-const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
+const AddToCartButton: React.FC<AddToCartButtonProps> = ({ onClickAddToCartButton, product }) => {
     const handleAddToCart = (product: Product) => {
-        const cartItem: ICartItem = {
-            id: product.id,
-            name: product.name,
-            retailPrice: product.retailPrice || 0,
-            dateAdded: new Date().toISOString(),
-            image: {
-                thumbnail: product.image?.thumbnail || ''
-            }
-        };
-
-        addToCart(cartItem);
+        onClickAddToCartButton();
     };
 
     return (

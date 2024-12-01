@@ -24,6 +24,7 @@ export default function Home({ products }: Products) {
 export const getServerSideProps: GetServerSideProps = async () => {
     try {
         const products = await getFeaturedProducts(5);
+        console.log(products);
         return {
             props: {
                 products

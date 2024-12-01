@@ -1,7 +1,9 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@utils/provider';
 import '@design-system/styles/global.scss';
-import { RecoilRoot } from 'recoil';
+import { RecoilEnv, RecoilRoot } from 'recoil';
+
+RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false;
 
 function CheckoutApp({ Component, pageProps }: AppProps) {
     return (

@@ -2,7 +2,9 @@ import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import { ThemeProvider } from '@utils/provider';
 import { MainLayout } from '@design-system/components/templates';
-import { RecoilRoot } from 'recoil';
+import { RecoilEnv, RecoilRoot } from 'recoil';
+
+RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false;
 
 const CartModule = dynamic(() => import('checkout/cart-module'), { ssr: false });
 

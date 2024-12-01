@@ -13,6 +13,7 @@ interface ProductCardProps {
     gender: string;
     sku: string;
     category: string;
+    onClickAddToCartButton: () => void;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -23,7 +24,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     brand,
     gender,
     sku,
-    category
+    category,
+    onClickAddToCartButton
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -90,7 +92,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                         'md:invisible': !isHovered
                     })}
                 >
-                    <AddToCartButton product={product} />
+                    <AddToCartButton
+                        onClickAddToCartButton={onClickAddToCartButton}
+                        product={product}
+                    />
                 </div>
             </div>
         </div>
