@@ -3,7 +3,9 @@ const withNx = require('@nx/next/plugins/with-nx');
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: '../.env' });
+if (process.env.NODE_ENVIRONMENT !== 'production') {
+    dotenv.config({ path: '../.env' });
+}
 
 // this enables you to use import() and the webpack parser
 // loading remotes on demand, not ideal for SSR

@@ -15,9 +15,15 @@ RUN npm install
 # Install nx globally
 RUN npm install -g nx
 
-# Set NX_DAEMON environment variable to false to prevent nx from running in daemon mode
+# Set ENV during build time
 ENV NX_DAEMON=false
 ENV NEXT_PRIVATE_LOCAL_WEBPACK=true
+ENV NODE_ENVIRONMENT=production
+ENV NEXT_PUBLIC_HOST_URL=http://nx-microray.com
+ENV NEXT_PUBLIC_STORE_URL=http://nx-microray.com/store
+ENV NEXT_PUBLIC_PRODUCT_URL=http://nx-microray.com/product
+ENV NEXT_PUBLIC_CHECKOUT_URL=http://nx-microray.com/checkout
+ENV NEXT_PUBLIC_PRODUCT_API_URL=http://nx-microray.com/api/product
 
 # Build the application
 RUN nx run host:build:production --skip-nx-cache

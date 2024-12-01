@@ -7,8 +7,10 @@ import { getCartItems } from '@utils/func/cart';
 import { CART_KEY, CART_ID_COOKIE } from '@utils/constants/cart';
 import cn from 'classnames';
 import Cookies from 'js-cookie';
-import styles from './Cart.module.scss';
 import { v4 as uuidv4 } from 'uuid';
+import { Button, Iconify } from '@design-system/components/atoms';
+import styles from './Cart.module.scss';
+import { useCartState } from '@utils/hooks/useCartState';
 
 const checkCartId = (): string => {
     let cartId = Cookies.get(CART_ID_COOKIE);
@@ -19,8 +21,10 @@ const checkCartId = (): string => {
     }
     return cartId;
 };
+
 const CartMenu = () => {
     const [cartItems, setCartItems] = useState<ICartItem[]>([]);
+    const { isCartOpen, closeCart } = useCartState();
 
     // Listen for localStorage changes
     useEffect(() => {
@@ -34,7 +38,7 @@ const CartMenu = () => {
         // Ensure cart ID exists
         checkCartId();
 
-        // // Listen for `storage` events (cross-tab updates)
+        // Listen for `storage` events (cross-tab updates)
         window.addEventListener('storage', (event) => {
             if (event.key === CART_KEY) {
                 onCartStorageUpdate();
@@ -48,8 +52,24 @@ const CartMenu = () => {
     }, []);
 
     return (
-        <div className={cn(styles['cart-menu-container'], 'z-50 items-center justify-center')}>
-            <div className={cn(styles['cart-menu-header'])}>My Cart</div>
+        <div
+            className={cn(
+                styles['cart-menu-container'],
+                'z-50 items-center justify-center',
+                isCartOpen ? 'animate-slide-in' : 'animate-slide-out' // Global toggle for animations
+            )}
+        >
+            <div className={cn(styles['cart-menu-header'], 'flex justify-between items-center')}>
+                <span>My Cart</span>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => closeCart()}
+                    aria-label="Close Cart"
+                >
+                    <Iconify icon="mdi:close" className="text-xl" />
+                </Button>
+            </div>
             <div className={cn(styles['cart-menu-body'])}>
                 {cartItems.length === 0 ? (
                     <p>Your cart is empty.</p>

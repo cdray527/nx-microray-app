@@ -4,13 +4,14 @@ import { ThemeToggler, SearchBar } from '@design-system/components/molecules';
 import { Button, Iconify } from '@design-system/components/atoms';
 
 interface HeaderProps {
-    cartToggler?: (isOpen: boolean | null) => void;
+    onClickCartButton?: () => void;
 }
 
-export function Header({ cartToggler }: HeaderProps) {
+export function Header({ onClickCartButton }: HeaderProps) {
     const handleOnClickCartButton = () => {
-        if (typeof cartToggler === 'function') {
-            cartToggler(null);
+        console.log(onClickCartButton);
+        if (typeof onClickCartButton === 'function') {
+            onClickCartButton();
         }
     };
 

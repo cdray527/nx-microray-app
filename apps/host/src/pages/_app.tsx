@@ -1,48 +1,29 @@
-import { useState, useRef } from 'react';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import { ThemeProvider } from '@utils/provider';
-import { Header, Footer } from '@design-system/components/organisms';
-import useOutsideClick from '@utils/hooks/useOutsideClick';
+import { MainLayout } from '@design-system/components/templates';
+import { RecoilRoot } from 'recoil';
 
-const Cart = dynamic(() => import('checkout/cart-module'));
+const CartModule = dynamic(() => import('checkout/cart-module'), { ssr: false });
 
 import '@design-system/styles/global.scss';
 
 function HostApp({ Component, pageProps }: AppProps) {
-    // State to control the visibility of the Cart component
-    const [isCartVisible, setIsCartVisible] = useState(false);
-
-    // Toggle cart visibility
-    const handleCartToggler = (isOpen?: boolean | null) => {
-        setIsCartVisible((prev) => (isOpen ? isOpen : !prev));
-    };
-
-    const cartMenuRef = useRef<HTMLDivElement>(null);
-    useOutsideClick(cartMenuRef, () => handleCartToggler(false));
-
     return (
         <>
-            <main className="app">
-                <ThemeProvider>
-                    {/* Pass the cart toggle handler to the Header */}
+            <RecoilRoot>
+                <main className="app">
                     <div className="min-h-screen antialiased">
                         <div className="relative flex min-h-screen flex-col">
-                            <Header cartToggler={handleCartToggler} />
-
-                            {/* Conditionally render the Cart component based on isCartVisible */}
-                            {isCartVisible && (
-                                <div ref={cartMenuRef}>
-                                    <Cart />
-                                </div>
-                            )}
-
-                            <Component {...pageProps} />
-                            <Footer />
+                            <ThemeProvider>
+                                <MainLayout CartModule={CartModule}>
+                                    <Component {...pageProps} />
+                                </MainLayout>
+                            </ThemeProvider>
                         </div>
                     </div>
-                </ThemeProvider>
-            </main>
+                </main>
+            </RecoilRoot>
         </>
     );
 }

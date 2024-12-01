@@ -1,27 +1,19 @@
-.cart-main-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 50px;
-    z-index: 50;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 .cart-menu-container {
+    z-index: 50;
+    animation: slideInFromRight 0.3s ease-in-out forwards;
     position: absolute;
     top: 100%;
     right: 0;
-    width: 300px;
+    width: 400px;
     background-color: var(--popover-background);
     color: var(--popover-foreground);
     overflow: hidden;
-    animation: fadeIn 0.2s ease-in-out;
+    min-height: 100vh;
     border: 1px solid;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
 }
 
 .cart-menu-header {
+    height: 4rem;
     padding: 15px;
     font-weight: bold;
     font-size: 1.2em;
@@ -33,7 +25,36 @@
 }
 
 .cart-menu-body {
-    max-height: 400px;
     overflow-y: auto; /* Enables vertical scroll for a clean layout */
     padding: 10px 0;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-slide-in {
+    animation: slide-in 0.3s ease-out forwards;
+}
+
+.animate-slide-out {
+    animation: slide-out 0.3s ease-in forwards;
 }

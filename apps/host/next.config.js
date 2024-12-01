@@ -3,10 +3,10 @@ const withNx = require('@nx/next/plugins/with-nx');
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: '../.env' });
+if (process.env.NODE_ENVIRONMENT !== 'production') {
+    dotenv.config({ path: '../.env' });
+}
 
-// this enables you to use import() and the webpack parser
-// loading remotes on demand, not ideal for SSR
 const remotes = (isServer) => {
     const location = isServer ? 'ssr' : 'chunks';
 
@@ -41,7 +41,13 @@ const nextConfig = {
                     automaticAsyncBoundary: true
                 },
                 exposes: {},
-                shared: {}
+                shared: {
+                    // to ensure the host will share the same instance of cart provider with the imported federated components
+                    recoil: { singleton: true, requiredVersion: false }
+                },
+                initOptions: {
+                    shareStrategy: 'lazy'
+                }
             })
         );
 
