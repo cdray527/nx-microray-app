@@ -67,5 +67,6 @@
     "defaultProject": "host",
     "useInferencePlugins": false,
     "defaultBase": "main",
-    "parallel": 5
+    "parallel": 5,
+    "useLegacyCache": true
 }
