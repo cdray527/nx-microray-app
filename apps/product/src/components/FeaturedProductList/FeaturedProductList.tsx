@@ -12,7 +12,7 @@ interface FeaturedProductListProps {
 
 const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts, count }) => {
     const [products, setProducts] = useState<Product[]>(dataProducts);
-    const { addToCart, openCart } = useCartState();
+    const { addToCart, openCart, isCartOpen } = useCartState();
 
     // Fetch products if necessary
     useEffect(() => {
@@ -45,7 +45,10 @@ const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts,
         };
 
         addToCart(cartItem);
-        openCart();
+        console.log('featureProductList :', isCartOpen);
+        if (!isCartOpen) {
+            openCart();
+        }
     };
 
     if (!products?.length) {

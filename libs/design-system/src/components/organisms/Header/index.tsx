@@ -9,7 +9,6 @@ interface HeaderProps {
 
 export function Header({ onClickCartButton }: HeaderProps) {
     const handleOnClickCartButton = () => {
-        console.log(onClickCartButton);
         if (typeof onClickCartButton === 'function') {
             onClickCartButton();
         }

@@ -12,6 +12,7 @@ export const useCartState = () => {
 
     const openCart = () => setCartOpen(true);
     const closeCart = () => setCartOpen(false);
+    const toggleCart = () => setCartOpen((prev) => !prev);
 
     const addToCart = (item: ICartItem) => {
         const cartId = Cookies.get(CART_ID_COOKIE);
@@ -37,5 +38,5 @@ export const useCartState = () => {
         setCartItems(savedCartItems);
     }, [setCartItems]);
 
-    return { cartItems, isCartOpen, openCart, closeCart, addToCart };
+    return { cartItems, isCartOpen, openCart, closeCart, addToCart, toggleCart };
 };
