@@ -5,7 +5,7 @@ import { useCartState } from '@utils/hooks/useCartState';
 
 type Props = {
     children: React.ReactNode;
-    CartModule: React.ComponentType;
+    CartModule?: React.ComponentType;
 };
 
 export function MainLayout({ children, CartModule }: Props) {
@@ -22,7 +22,7 @@ export function MainLayout({ children, CartModule }: Props) {
                 <Footer />
             </div>
             <div className="absolute top-0 right-0" ref={cartMenuRef}>
-                <CartModule />
+                {CartModule && <CartModule />}
             </div>
         </div>
     );

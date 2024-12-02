@@ -33,6 +33,7 @@
         "reactstrap": "^9.1.1",
         "recoil": "^0.7.7",
         "regenerator-runtime": "0.13.7",
+        "storybook": "^8.2.8",
         "tslib": "^2.3.0",
         "uuid": "^11.0.3"
     },
@@ -47,7 +48,7 @@
         "@nx/js": "20.1.4",
         "@nx/next": "20.1.4",
         "@nx/react": "20.1.4",
-        "@nx/storybook": "20.1.4",
+        "@nx/storybook": "^20.1.4",
         "@nx/web": "20.1.4",
         "@nx/workspace": "20.1.4",
         "@storybook/addon-docs": "^8.3.4",

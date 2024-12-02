@@ -27,9 +27,9 @@ export function Header({ onClickCartButton }: HeaderProps) {
                         </Button>
                         <ThemeToggler />
                     </nav>
-                    <div className="hidden md:flex flex-1 items-center md:justify-end">
+                    {/* <div className="hidden md:flex flex-1 items-center md:justify-end">
                         <SearchBar onSearch={(query) => console.log(query)} />
-                    </div>
+                    </div> */}
                     <div className="hidden md:flex flex-1 items-center md:justify-end">
                         <Button
                             variant="outline"

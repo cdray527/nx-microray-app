@@ -13,7 +13,7 @@ const meta: Meta<typeof SearchBar> = {
         },
         icon: {
             control: { type: 'text' },
-            defaultValue: 'ic:outline-search' // Default icon
+            defaultValue: 'ic:outline-search'
         }
     }
 };

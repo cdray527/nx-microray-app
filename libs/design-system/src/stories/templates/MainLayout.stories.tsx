@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MainLayout } from '@design-system/components/templates'; // Make sure this points to the right file
+import { MainLayout } from '@design-system/components/templates';
+import { RecoilRoot } from 'recoil';
 
-// Meta configuration for the MainLayout component
 const meta: Meta<typeof MainLayout> = {
     title: 'Components/Templates/MainLayout',
     component: MainLayout,
@@ -11,18 +11,18 @@ const meta: Meta<typeof MainLayout> = {
     tags: ['!autodocs'],
     decorators: [
         (Story) => (
-            <div className="h-screen">
-                <Story />
-            </div>
+            <RecoilRoot>
+                <div className="h-screen">
+                    <Story />
+                </div>
+            </RecoilRoot>
         )
     ]
 };
 
-// Export the meta object
 export default meta;
 type Story = StoryObj<typeof MainLayout>;
 
-// Default story for the MainLayout
 export const Default: Story = {
     render: (args) => (
         <MainLayout {...args}>
