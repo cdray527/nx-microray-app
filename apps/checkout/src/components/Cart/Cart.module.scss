@@ -9,14 +9,14 @@
     overflow: hidden;
     min-height: 100vh;
     border: 1px solid;
-    transform: translateX(100%); /* Hidden by default */
-    opacity: 0; /* Hidden by default */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .cart-menu-container.open {
-    transform: translateX(0); /* Fully visible */
-    opacity: 1; /* Fully visible */
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .cart-menu-header {

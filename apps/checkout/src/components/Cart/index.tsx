@@ -12,6 +12,7 @@ const Cart = () => {
     useEffect(() => {
         console.log(isCartOpen);
     }, [isCartOpen]);
+
     return (
         <div className={cn(styles['cart-menu-container'], { [styles.open]: isCartOpen })}>
             <CartMenu />
