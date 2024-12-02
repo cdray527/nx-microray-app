@@ -9,16 +9,10 @@ import styles from './Cart.module.scss';
 import { useCartState } from '@utils/hooks/useCartState';
 
 const CartMenu = () => {
-    const { cartItems, isCartOpen, closeCart } = useCartState();
+    const { cartItems, closeCart } = useCartState();
 
     return (
-        <div
-            className={cn(
-                styles['cart-menu-container'],
-                'z-50 items-center justify-center',
-                isCartOpen ? 'animate-slide-in' : 'animate-slide-out'
-            )}
-        >
+        <>
             <div className={cn(styles['cart-menu-header'], 'flex justify-between items-center')}>
                 <span>My Cart</span>
                 <Button
@@ -41,7 +35,7 @@ const CartMenu = () => {
                     </ul>
                 )}
             </div>
-        </div>
+        </>
     );
 };
 
