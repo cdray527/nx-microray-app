@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { CartMenu } from './CartMenu';
+import React from 'react';
+import CartHeader from './CartHeader';
+import CartMenu from './CartMenu';
+import CartFooter from './CartFooter';
 import styles from './Cart.module.scss';
 import cn from 'classnames';
 import { useCartState } from '@utils/hooks/useCartState';
@@ -9,13 +11,11 @@ import { useCartState } from '@utils/hooks/useCartState';
 const Cart = () => {
     const { isCartOpen } = useCartState();
 
-    useEffect(() => {
-        console.log(isCartOpen);
-    }, [isCartOpen]);
-
     return (
-        <div className={cn(styles['cart-menu-container'], { [styles.open]: isCartOpen })}>
+        <div className={cn(styles['cart-container'], { [styles.open]: isCartOpen })}>
+            <CartHeader />
             <CartMenu />
+            <CartFooter />
         </div>
     );
 };

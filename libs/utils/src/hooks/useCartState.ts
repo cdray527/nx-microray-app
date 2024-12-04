@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 import { cartIsOpenedState, cartItemsState } from '../recoil/cartState';
 import Cookies from 'js-cookie';
@@ -14,6 +14,21 @@ export const useCartState = () => {
     const closeCart = () => setCartOpen(false);
     const toggleCart = () => setCartOpen((prev) => !prev);
 
+    const totalPrice = useMemo(
+        () => cartItems.reduce((total, item) => total + item.retailPrice * item.quantity, 0),
+        [cartItems]
+    );
+
+    const updateItemQuantity = (itemId: string, newQuantity: number) => {
+        if (newQuantity < 1) return;
+
+        const updatedCartItems = cartItems.map((item) =>
+            item.id === itemId ? { ...item, quantity: newQuantity } : item
+        );
+        setCartItems(updatedCartItems);
+        localStorage.setItem(CART_KEY, JSON.stringify(updatedCartItems));
+    };
+
     const addToCart = (item: ICartItem) => {
         const cartId = Cookies.get(CART_ID_COOKIE);
         if (!cartId) {
@@ -21,16 +36,27 @@ export const useCartState = () => {
             Cookies.set(CART_ID_COOKIE, uniqueCartId, { expires: 7, path: '/' });
         }
 
-        const updatedCartItems = [...cartItems];
-        const itemExists = updatedCartItems.some((cartItem) => cartItem.id === item.id);
-        if (!itemExists) {
-            updatedCartItems.push(item);
-            setCartItems(updatedCartItems);
+        setCartItems((prevCartItems) => {
+            const updatedCartItems = [...prevCartItems];
+            const itemIndex = updatedCartItems.findIndex((cartItem) => cartItem.id === item.id);
+
+            if (itemIndex === -1) {
+                updatedCartItems.push(item);
+            } else {
+                updatedCartItems[itemIndex] = {
+                    ...updatedCartItems[itemIndex],
+                    quantity: updatedCartItems[itemIndex].quantity + 1
+                };
+            }
             localStorage.setItem(CART_KEY, JSON.stringify(updatedCartItems));
-            console.log('Added to cart:', item);
-        } else {
-            console.log('Item already inside the cart');
-        }
+
+            return updatedCartItems;
+        });
+    };
+    const removeItem = (itemId: string) => {
+        const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+        setCartItems(updatedCartItems);
+        localStorage.setItem(CART_KEY, JSON.stringify(updatedCartItems));
     };
 
     useEffect(() => {
@@ -38,5 +64,15 @@ export const useCartState = () => {
         setCartItems(savedCartItems);
     }, [setCartItems]);
 
-    return { cartItems, isCartOpen, openCart, closeCart, addToCart, toggleCart };
+    return {
+        cartItems,
+        totalPrice,
+        isCartOpen,
+        openCart,
+        closeCart,
+        toggleCart,
+        addToCart,
+        updateItemQuantity,
+        removeItem
+    };
 };

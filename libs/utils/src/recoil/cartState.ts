@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 import { ICartItem } from '../types/Cart';
 
-export const cartIsOpenedState = atom({
+export const cartIsOpenedState = atom<boolean>({
     key: 'cartIsOpenedState',
     default: false
 });

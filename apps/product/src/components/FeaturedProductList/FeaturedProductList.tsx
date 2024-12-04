@@ -41,11 +41,11 @@ const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts,
             dateAdded: new Date().toISOString(),
             image: {
                 thumbnail: product.image?.thumbnail || ''
-            }
+            },
+            quantity: 1
         };
 
         addToCart(cartItem);
-        console.log('featureProductList :', isCartOpen);
         if (!isCartOpen) {
             openCart();
         }
