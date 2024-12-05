@@ -14,6 +14,10 @@ export const useCartState = () => {
     const closeCart = () => setCartOpen(false);
     const toggleCart = () => setCartOpen((prev) => !prev);
 
+    const totalItems = useMemo(
+        () => cartItems.reduce((count, item) => count + (item.quantity || 0), 0),
+        [cartItems]
+    );
     const totalPrice = useMemo(
         () => cartItems.reduce((total, item) => total + item.retailPrice * item.quantity, 0),
         [cartItems]
@@ -66,6 +70,7 @@ export const useCartState = () => {
 
     return {
         cartItems,
+        totalItems,
         totalPrice,
         isCartOpen,
         openCart,

@@ -7,11 +7,11 @@ import { useCartState } from '@utils/hooks/useCartState';
 import styles from './Cart.module.scss';
 
 const CartHeader = () => {
-    const { closeCart } = useCartState();
-
+    const { closeCart, totalItems } = useCartState();
     return (
         <div className={cn(styles['cart-header'], 'flex justify-between items-center')}>
-            <span>My Cart</span>
+            <h3>My Cart </h3>
+            <span>{totalItems > 0 ? `${totalItems} item(s)` : ''}</span>
             <Button variant="ghost" size="icon" onClick={() => closeCart()} aria-label="Close Cart">
                 <Iconify icon="mdi:close" className="text-xl" />
             </Button>

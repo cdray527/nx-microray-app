@@ -2,17 +2,19 @@
 
 import { ThemeToggler, SearchBar } from '@design-system/components/molecules';
 import { Button, Iconify } from '@design-system/components/atoms';
+import { useCartState } from '@utils/hooks/useCartState';
 
 interface HeaderProps {
     onClickCartButton?: () => void;
 }
 
 export function Header({ onClickCartButton }: HeaderProps) {
-    const handleOnClickCartButton = () => {
-        if (typeof onClickCartButton === 'function') {
-            onClickCartButton();
-        }
-    };
+    const { toggleCart, totalItems } = useCartState();
+    // const handleOnClickCartButton = () => {
+    //     if (typeof onClickCartButton === 'function') {
+    //         onClickCartButton();
+    //     }
+    // };
 
     return (
         <header className="sticky top-0 z-40 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/70">
@@ -34,11 +36,16 @@ export function Header({ onClickCartButton }: HeaderProps) {
                         <Button
                             variant="outline"
                             size="icon"
-                            onClick={() => handleOnClickCartButton()}
+                            onClick={() => toggleCart()}
                             aria-label="Toggle cart menu"
                             className="relative flex items-center p-2"
                         >
                             <Iconify icon="mdi:cart" width={24} height={24} />
+                            {totalItems > 0 && (
+                                <span className="absolute top-0 right-0 inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full">
+                                    {totalItems}
+                                </span>
+                            )}
                         </Button>
                     </div>
                 </div>
