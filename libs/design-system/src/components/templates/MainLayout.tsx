@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Header, Footer } from '@design-system/components/organisms';
-import { useCartState } from '@utils/hooks/useCartState';
+// import { useCartState } from '@utils/hooks/useCartState';
 // import useOutsideClick from '@utils/hooks/useOutsideClick';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 };
 
 export function MainLayout({ children, CartModule }: Props) {
-    const { toggleCart, closeCart } = useCartState();
+    // const { closeCart } = useCartState();
     const cartMenuRef = useRef<HTMLDivElement>(null);
 
     // useOutsideClick(cartMenuRef, () => closeCart());
@@ -17,7 +17,7 @@ export function MainLayout({ children, CartModule }: Props) {
     return (
         <div className="min-h-screen antialiased">
             <div className="relative flex min-h-screen flex-col">
-                <Header onClickCartButton={() => toggleCart()} />
+                <Header />
                 <div className="flex-1 py-6 px-6">{children}</div>
                 <Footer />
             </div>

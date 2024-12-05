@@ -14,11 +14,5 @@ export const Default: Story = {
 };
 
 export const CartButtonEventHandling: Story = {
-    render: () => (
-        <Header
-            onClickCartButton={() => {
-                console.log('Cart button clicked');
-            }}
-        />
-    )
+    render: () => <Header />
 };

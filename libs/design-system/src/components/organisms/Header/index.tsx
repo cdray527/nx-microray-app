@@ -4,17 +4,8 @@ import { ThemeToggler, SearchBar } from '@design-system/components/molecules';
 import { Button, Iconify } from '@design-system/components/atoms';
 import { useCartState } from '@utils/hooks/useCartState';
 
-interface HeaderProps {
-    onClickCartButton?: () => void;
-}
-
-export function Header({ onClickCartButton }: HeaderProps) {
+export function Header() {
     const { toggleCart, totalItems } = useCartState();
-    // const handleOnClickCartButton = () => {
-    //     if (typeof onClickCartButton === 'function') {
-    //         onClickCartButton();
-    //     }
-    // };
 
     return (
         <header className="sticky top-0 z-40 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/70">
