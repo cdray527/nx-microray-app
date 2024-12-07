@@ -1,3 +1,5 @@
+@import '@design-system/styles/mixin/breakpoint';
+
 .cart-container {
     z-index: 50;
     position: absolute;
@@ -7,19 +9,24 @@
     background-color: var(--popover-background);
     color: var(--popover-foreground);
     overflow: hidden;
-    border: 1px solid;
     overflow-y: scroll;
-
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease-in-out;
-    transform: translateX(100%);
+
+    @include breakpoint('sm') {
+        border: 1px solid;
+        transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
 }
 
 .cart-container.open {
-    width: 400px;
+    width: 100%;
     opacity: 1;
 
-    transform: translateX(0);
+    @include breakpoint('sm') {
+        transform: translateX(0);
+        width: 400px;
+    }
 }
 
 .cart-header {

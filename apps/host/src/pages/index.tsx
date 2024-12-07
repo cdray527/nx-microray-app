@@ -12,11 +12,16 @@ export default function Home({ products }: Products) {
             <Head>
                 <title>HOST APP</title>
             </Head>
-            <div className="flex-1 py-6 px-6">
-                <div className="flex justify-center flex-col mx-auto max-w-fit">
+            <section className="flex flex-col border-b">
+                <h2 className="px-4 py-8  md:py-12">Static Content from Store App</h2>
+            </section>
+            <section className="flex flex-col">
+                {/* <div className="container flex flex-col items-center text-center gap-4"> */}
+                <h2 className="px-4 py-4">Dynamic Content from Product App </h2>
+                <div className="flex flex-col max-w-fit">
                     <FeaturedProductList dataProducts={products} count={5} />
                 </div>
-            </div>
+            </section>
         </>
     );
 }

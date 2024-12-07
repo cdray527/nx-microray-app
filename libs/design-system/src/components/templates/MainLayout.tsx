@@ -18,12 +18,10 @@ export function MainLayout({ children, CartModule }: Props) {
         <div className="min-h-screen antialiased">
             <div className="relative flex min-h-screen flex-col">
                 <Header />
-                <div className="flex-1 py-6 px-6">{children}</div>
+                <div className="flex-1 py-6">{children}</div>
                 <Footer />
             </div>
-            <div className="absolute top-0 right-0" ref={cartMenuRef}>
-                {CartModule && <CartModule />}
-            </div>
+            {CartModule && <CartModule />}
         </div>
     );
 }

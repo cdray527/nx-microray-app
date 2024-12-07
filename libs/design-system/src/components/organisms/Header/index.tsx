@@ -15,7 +15,7 @@ export function Header() {
                         <Button variant="default" size="default" asChild>
                             <a href="/">
                                 <Iconify icon="mdi:home" className="mr-2" />
-                                NX-Microray
+                                Home
                             </a>
                         </Button>
                         <ThemeToggler />
@@ -23,7 +23,7 @@ export function Header() {
                     {/* <div className="hidden md:flex flex-1 items-center md:justify-end">
                         <SearchBar onSearch={(query) => console.log(query)} />
                     </div> */}
-                    <div className="hidden md:flex flex-1 items-center md:justify-end">
+                    <div className="flex flex-1 items-center justify-end">
                         <Button
                             variant="outline"
                             size="icon"
