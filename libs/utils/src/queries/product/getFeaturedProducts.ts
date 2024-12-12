@@ -3,10 +3,10 @@ import { gql } from '@apollo/client';
 import createApolloClient from '../../tools/apollo';
 import { Product } from '../../types/Product';
 
-const url = `${process.env.NEXT_PUBLIC_PRODUCT_API_URL}/query`;
-const client = createApolloClient(url);
+const client = createApolloClient('product');
 
 export const getFeaturedProducts = async (count: number): Promise<Product[]> => {
+    let result = [];
     const query = gql`
         query FeaturedProducts($count: Int!) {
             featuredProducts(count: $count) {
@@ -31,10 +31,15 @@ export const getFeaturedProducts = async (count: number): Promise<Product[]> => 
         }
     `;
 
-    const response = await client.query({
-        query,
-        variables: { count }
-    });
+    try {
+        const response = await client.query({
+            query,
+            variables: { count }
+        });
+        result = response.data.featuredProducts;
+    } catch (error) {
+        console.log(error);
+    }
 
-    return response.data.featuredProducts;
+    return result;
 };

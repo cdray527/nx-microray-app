@@ -21,6 +21,10 @@ const remotes = (isServer) => {
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+    env: {
+        NEXT_PUBLIC_PRODUCT_API_URL: process.env.NEXT_PUBLIC_PRODUCT_API_URL,
+        NEXT_PRIVATE_PRODUCT_API_URL: process.env.NEXT_PRIVATE_PRODUCT_API_URL
+    },
     nx: {
         // Set this to true if you would like to to use SVGR
         // See: https://github.com/gregberge/svgr

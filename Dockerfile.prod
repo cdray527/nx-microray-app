@@ -23,7 +23,8 @@ ENV NEXT_PUBLIC_HOST_URL=http://nx-microray.com
 ENV NEXT_PUBLIC_STORE_URL=http://nx-microray.com/store
 ENV NEXT_PUBLIC_PRODUCT_URL=http://nx-microray.com/product
 ENV NEXT_PUBLIC_CHECKOUT_URL=http://nx-microray.com/checkout
-ENV NEXT_PUBLIC_PRODUCT_API_URL=http://nx-microray.com/api/product
+ENV NEXT_PUBLIC_PRODUCT_API_URL="/api/product"
+ENV NEXT_PRIVATE_PRODUCT_API_URL=http://nx-microray-api-product:5200/api/product
 
 # Build the application
 RUN nx run host:build:production --skip-nx-cache

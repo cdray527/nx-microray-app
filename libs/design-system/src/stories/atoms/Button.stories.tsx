@@ -25,7 +25,7 @@ export const EventHandling: Story = {
                 href="#"
                 onClick={(event) => {
                     event.preventDefault();
-                    console.log('');
+                    console.log('Button clicked');
                 }}
             >
                 OnClick Button
