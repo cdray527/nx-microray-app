@@ -10,28 +10,27 @@ interface FeaturedProductListProps {
     count: number;
 }
 
-// Uncomment to support CSR
 const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts, count }) => {
-    // const [products, setProducts] = useState<Product[]>(dataProducts);
+    const [products, setProducts] = useState<Product[]>(dataProducts);
     const { addToCart, openCart, isCartOpen } = useCartState();
 
-    //
-    // useEffect(() => {
-    //     const fetchProducts = async () => {
-    //         try {
-    //             const data = await getFeaturedProducts(count);
-    //             setProducts(data);
-    //         } catch (err) {
-    //             console.error('Error fetching featured products:', err);
-    //         }
-    //     };
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const data = await getFeaturedProducts(count);
+                setProducts(data);
+            } catch (err) {
+                console.error('Error fetching featured products:', err);
+            }
+        };
 
-    //     if (dataProducts?.length !== count) {
-    //         fetchProducts();
-    //     } else {
-    //         setProducts(dataProducts);
-    //     }
-    // }, [dataProducts, count]);
+        // Only fetch if the server-provided data is incomplete or incorrect
+        if (dataProducts?.length !== count) {
+            fetchProducts();
+        } else {
+            setProducts(dataProducts);
+        }
+    }, [dataProducts, count]);
 
     // Handle adding product to cart
     const handleAddToCart = (product: Product) => {
@@ -52,14 +51,14 @@ const FeaturedProductList: React.FC<FeaturedProductListProps> = ({ dataProducts,
         }
     };
 
-    if (!dataProducts?.length) {
+    if (!products?.length) {
         return <p>No featured products available.</p>;
     }
 
     return (
         <div className="flex">
             <Carousel
-                items={dataProducts}
+                items={products}
                 renderItem={(product) => (
                     <ProductCard
                         key={product.id}

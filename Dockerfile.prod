@@ -19,11 +19,17 @@ RUN npm install -g nx
 ENV NX_DAEMON=false
 ENV NEXT_PRIVATE_LOCAL_WEBPACK=true
 ENV NODE_ENVIRONMENT=production
+
 ENV NEXT_PUBLIC_HOST_URL=http://nx-microray.com
 ENV NEXT_PUBLIC_STORE_URL=http://nx-microray.com/store
 ENV NEXT_PUBLIC_PRODUCT_URL=http://nx-microray.com/product
 ENV NEXT_PUBLIC_CHECKOUT_URL=http://nx-microray.com/checkout
-ENV NEXT_PUBLIC_PRODUCT_API_URL="/api/product"
+ENV NEXT_PUBLIC_PRODUCT_API_URL=http://nx-microray.com/api/product
+
+ENV NEXT_PRIVATE_HOST_URL=http://nx-microray-app-host:4000
+ENV NEXT_PRIVATE_STORE_URL=http://nx-microray-app-store:4100
+ENV NEXT_PRIVATE_PRODUCT_URL=http://nx-microray-app-product:4200
+ENV NEXT_PRIVATE_CHECKOUT_URL=http://nx-microray-app-checkout:4300
 ENV NEXT_PRIVATE_PRODUCT_API_URL=http://nx-microray-api-product:5200/api/product
 
 # Build the application

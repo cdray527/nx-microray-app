@@ -8,22 +8,36 @@ if (process.env.NODE_ENVIRONMENT !== 'production') {
 }
 
 const remotes = (isServer) => {
-    const location = isServer ? 'ssr' : 'chunks';
+    let objRemotes;
 
-    return {
-        store: `store@${process.env.NEXT_PUBLIC_STORE_URL}/_next/static/${location}/remoteEntry.js`,
-        checkout: `checkout@${process.env.NEXT_PUBLIC_CHECKOUT_URL}/_next/static/${location}/remoteEntry.js`,
-        product: `product@${process.env.NEXT_PUBLIC_PRODUCT_URL}/_next/static/${location}/remoteEntry.js`
-    };
+    if (isServer) {
+        objRemotes = {
+            store: `store@${process.env.NEXT_PRIVATE_STORE_URL}/_next/static/ssr/remoteEntry.js`,
+            checkout: `checkout@${process.env.NEXT_PRIVATE_CHECKOUT_URL}/_next/static/ssr/remoteEntry.js`,
+            product: `product@${process.env.NEXT_PRIVATE_PRODUCT_URL}/_next/static/ssr/remoteEntry.js`
+        };
+    } else {
+        objRemotes = {
+            store: `store@${process.env.NEXT_PUBLIC_STORE_URL}/_next/static/chunks/remoteEntry.js`,
+            checkout: `checkout@${process.env.NEXT_PUBLIC_CHECKOUT_URL}/_next/static/chunks/remoteEntry.js`,
+            product: `product@${process.env.NEXT_PUBLIC_PRODUCT_URL}/_next/static/chunks/remoteEntry.js`
+        };
+    }
+    console.log(objRemotes);
+    return objRemotes;
 };
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+    reactStrictMode: true,
     env: {
-        NEXT_PUBLIC_PRODUCT_API_URL: process.env.NEXT_PUBLIC_PRODUCT_API_URL,
-        NEXT_PRIVATE_PRODUCT_API_URL: process.env.NEXT_PRIVATE_PRODUCT_API_URL
+        NEXT_PUBLIC_HOST_URL: process.env.NEXT_PUBLIC_HOST_URL,
+        NEXT_PUBLIC_STORE_URL: process.env.NEXT_PUBLIC_STORE_URL,
+        NEXT_PUBLIC_CHECKOUT_URL: process.env.NEXT_PUBLIC_CHECKOUT_URL,
+        NEXT_PUBLIC_PRODUCT_URL: process.env.NEXT_PUBLIC_PRODUCT_URL,
+        NEXT_PUBLIC_PRODUCT_API_URL: process.env.NEXT_PUBLIC_PRODUCT_API_URL
     },
     nx: {
         // Set this to true if you would like to to use SVGR
